@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		850D190B249AAA6200A08DE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D190A249AAA6200A08DE2 /* AppDelegate.swift */; };
 		850D190D249AAA6200A08DE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D190C249AAA6200A08DE2 /* SceneDelegate.swift */; };
-		850D190F249AAA6200A08DE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D190E249AAA6200A08DE2 /* ViewController.swift */; };
 		850D1912249AAA6200A08DE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 850D1910249AAA6200A08DE2 /* Main.storyboard */; };
 		850D1914249AAA6600A08DE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850D1913249AAA6600A08DE2 /* Assets.xcassets */; };
 		850D1917249AAA6600A08DE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 850D1915249AAA6600A08DE2 /* LaunchScreen.storyboard */; };
 		850D1922249AAA6600A08DE2 /* Pickup_Basketball_QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D1921249AAA6600A08DE2 /* Pickup_Basketball_QueueTests.swift */; };
+		850D1931249AADFA00A08DE2 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D1930249AADFA00A08DE2 /* SignInVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,6 @@
 		850D1907249AAA6200A08DE2 /* Pickup-Basketball-Queue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pickup-Basketball-Queue.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		850D190A249AAA6200A08DE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		850D190C249AAA6200A08DE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		850D190E249AAA6200A08DE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		850D1911249AAA6200A08DE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		850D1913249AAA6600A08DE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		850D1916249AAA6600A08DE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		850D191D249AAA6600A08DE2 /* Pickup-Basketball-QueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pickup-Basketball-QueueTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		850D1921249AAA6600A08DE2 /* Pickup_Basketball_QueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pickup_Basketball_QueueTests.swift; sourceTree = "<group>"; };
 		850D1923249AAA6600A08DE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		850D1930249AADFA00A08DE2 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +79,12 @@
 		850D1909249AAA6200A08DE2 /* Pickup-Basketball-Queue */ = {
 			isa = PBXGroup;
 			children = (
+				850D192F249AADC600A08DE2 /* Controller */,
+				850D192E249AADBC00A08DE2 /* View */,
+				850D192D249AADB400A08DE2 /* Model */,
+				850D192C249AADAB00A08DE2 /* Services */,
 				850D190A249AAA6200A08DE2 /* AppDelegate.swift */,
 				850D190C249AAA6200A08DE2 /* SceneDelegate.swift */,
-				850D190E249AAA6200A08DE2 /* ViewController.swift */,
 				850D1910249AAA6200A08DE2 /* Main.storyboard */,
 				850D1913249AAA6600A08DE2 /* Assets.xcassets */,
 				850D1915249AAA6600A08DE2 /* LaunchScreen.storyboard */,
@@ -97,6 +100,35 @@
 				850D1923249AAA6600A08DE2 /* Info.plist */,
 			);
 			path = "Pickup-Basketball-QueueTests";
+			sourceTree = "<group>";
+		};
+		850D192C249AADAB00A08DE2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		850D192D249AADB400A08DE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		850D192E249AADBC00A08DE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		850D192F249AADC600A08DE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				850D1930249AADFA00A08DE2 /* SignInVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				850D190F249AAA6200A08DE2 /* ViewController.swift in Sources */,
 				850D190B249AAA6200A08DE2 /* AppDelegate.swift in Sources */,
 				850D190D249AAA6200A08DE2 /* SceneDelegate.swift in Sources */,
+				850D1931249AADFA00A08DE2 /* SignInVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
