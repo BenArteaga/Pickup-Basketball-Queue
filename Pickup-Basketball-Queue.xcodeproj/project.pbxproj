@@ -16,6 +16,8 @@
 		850D1931249AADFA00A08DE2 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D1930249AADFA00A08DE2 /* SignInVC.swift */; };
 		850D1933249BD69B00A08DE2 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D1932249BD69B00A08DE2 /* Player.swift */; };
 		850D1937249D1B8600A08DE2 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D1936249D1B8600A08DE2 /* AuthService.swift */; };
+		85A35D11249D2A5E00831D8A /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D10249D2A5E00831D8A /* PlayerVC.swift */; };
+		85A35D13249D2A7100831D8A /* GymVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D12249D2A7100831D8A /* GymVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		850D1930249AADFA00A08DE2 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		850D1932249BD69B00A08DE2 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		850D1936249D1B8600A08DE2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		85A35D10249D2A5E00831D8A /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
+		85A35D12249D2A7100831D8A /* GymVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				850D1930249AADFA00A08DE2 /* SignInVC.swift */,
+				85A35D10249D2A5E00831D8A /* PlayerVC.swift */,
+				85A35D12249D2A7100831D8A /* GymVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -241,7 +247,9 @@
 				850D1933249BD69B00A08DE2 /* Player.swift in Sources */,
 				850D190B249AAA6200A08DE2 /* AppDelegate.swift in Sources */,
 				850D190D249AAA6200A08DE2 /* SceneDelegate.swift in Sources */,
+				85A35D11249D2A5E00831D8A /* PlayerVC.swift in Sources */,
 				850D1937249D1B8600A08DE2 /* AuthService.swift in Sources */,
+				85A35D13249D2A7100831D8A /* GymVC.swift in Sources */,
 				850D1931249AADFA00A08DE2 /* SignInVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
