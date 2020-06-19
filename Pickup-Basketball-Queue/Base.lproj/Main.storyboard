@@ -42,6 +42,9 @@
                                 <state key="normal" title="Gym Sign In/Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="gymSignInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bVf-Bk-sVu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Runs Queue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoJ-Vb-GCO">
                                 <rect key="frame" x="55" y="74" width="304" height="77"/>
@@ -63,6 +66,9 @@
                                 <state key="normal" title="Player Sign In/Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="playerSignInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AmY-Le-9ld"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -92,11 +98,45 @@
                         <outlet property="PasswordTextField" destination="nsI-vR-sPI" id="zaQ-Kf-7ru"/>
                         <outlet property="gymSignInBtn" destination="Lhp-r6-IzS" id="l4Y-9v-TNk"/>
                         <outlet property="playerSignInBtn" destination="3fs-gb-Eja" id="6Gq-KU-hOd"/>
+                        <segue destination="6fj-VG-58H" kind="show" identifier="SignInViewtoPlayerView" id="0pq-vH-y6a"/>
+                        <segue destination="xys-QL-Tvq" kind="show" identifier="SignInViewtoGymView" id="eug-70-fEw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+        </scene>
+        <!--GymView-->
+        <scene sceneID="k1o-D4-CTL">
+            <objects>
+                <viewController id="xys-QL-Tvq" userLabel="GymView" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="etO-Ec-l8h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="dcn-82-GuY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jWH-wu-O1d"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zbk-Ag-QrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-641" y="916"/>
+        </scene>
+        <!--PlayerView-->
+        <scene sceneID="rkP-X2-sKd">
+            <objects>
+                <viewController id="6fj-VG-58H" userLabel="PlayerView" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yiD-n4-xo4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="8SB-wU-kE1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TIt-nU-kNB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="opX-oa-9Sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="901"/>
         </scene>
     </scenes>
 </document>
