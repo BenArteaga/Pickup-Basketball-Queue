@@ -59,9 +59,48 @@ class SignInVC: UIViewController {
      }
     
     @IBAction func playerSignInTapped(_ sender: UIButton) {
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            showAlert(title: "Error", message: "Please enter an email and a password")
+            return
+        }
+        
+        guard email != "", password != "" else {
+            showAlert(title: "Error", message: "Please enter an email and password")
+            return
+        }
+        
+        AuthService.instance.emailLogin(email, password: password) { (success, message) in
+            if success {
+                self.setUsername()
+                self.performSegue(withIdentifier: "SignInViewtoPlayerView", sender: nil)
+            }
+            else {
+                self.showAlert(title: "Failure", message: message)
+            }
+        }
     }
     
     @IBAction func gymSignInTapped(_ sender: UIButton) {
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            showAlert(title: "Error", message: "Please enter an email and a password")
+            return
+        }
+        
+        guard email != "", password != "" else {
+            showAlert(title: "Error", message: "Please enter an email and password")
+            return
+        }
+        
+        AuthService.instance.emailLogin(email, password: password) { (success, message) in
+            if success {
+                AuthService.instance.isGym = true
+                self.setUsername()
+                self.performSegue(withIdentifier: "SignInViewtoGymView", sender: nil)
+            }
+            else {
+                self.showAlert(title: "Failure", message: message)
+            }
+        }
     }
     
     
