@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class SignInVC: UIViewController {
 
-    @IBOutlet weak var EmailTextField: UITextField!
-    @IBOutlet weak var PasswordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var playerSignInBtn: UIButton!
     @IBOutlet weak var gymSignInBtn: UIButton!
     

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,9 @@
 		850D1937249D1B8600A08DE2 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D1936249D1B8600A08DE2 /* AuthService.swift */; };
 		85A35D11249D2A5E00831D8A /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D10249D2A5E00831D8A /* PlayerVC.swift */; };
 		85A35D13249D2A7100831D8A /* GymVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D12249D2A7100831D8A /* GymVC.swift */; };
+		85A35D15249E98DA00831D8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85A35D14249E98DA00831D8A /* GoogleService-Info.plist */; };
+		C6D34D09E76782578A3EB5C3 /* Pods_Pickup_Basketball_QueueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC96F862DA60AEDC316B6591 /* Pods_Pickup_Basketball_QueueTests.framework */; };
+		DB6E691039C630D40055DDD0 /* Pods_Pickup_Basketball_Queue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA4CE4259B80438C1408454 /* Pods_Pickup_Basketball_Queue.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1284A5775CBD4C471872BD7E /* Pods-Pickup-Basketball-Queue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pickup-Basketball-Queue.debug.xcconfig"; path = "Target Support Files/Pods-Pickup-Basketball-Queue/Pods-Pickup-Basketball-Queue.debug.xcconfig"; sourceTree = "<group>"; };
+		43FF6C31D4130403688A087A /* Pods-Pickup-Basketball-Queue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pickup-Basketball-Queue.release.xcconfig"; path = "Target Support Files/Pods-Pickup-Basketball-Queue/Pods-Pickup-Basketball-Queue.release.xcconfig"; sourceTree = "<group>"; };
+		6F1D5F8A82132076E3DBE4A4 /* Pods-Pickup-Basketball-QueueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pickup-Basketball-QueueTests.debug.xcconfig"; path = "Target Support Files/Pods-Pickup-Basketball-QueueTests/Pods-Pickup-Basketball-QueueTests.debug.xcconfig"; sourceTree = "<group>"; };
 		850D1907249AAA6200A08DE2 /* Pickup-Basketball-Queue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pickup-Basketball-Queue.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		850D190A249AAA6200A08DE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		850D190C249AAA6200A08DE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +52,10 @@
 		850D1936249D1B8600A08DE2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		85A35D10249D2A5E00831D8A /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		85A35D12249D2A7100831D8A /* GymVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymVC.swift; sourceTree = "<group>"; };
+		85A35D14249E98DA00831D8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9829A58B254CBF1767FB2169 /* Pods-Pickup-Basketball-QueueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pickup-Basketball-QueueTests.release.xcconfig"; path = "Target Support Files/Pods-Pickup-Basketball-QueueTests/Pods-Pickup-Basketball-QueueTests.release.xcconfig"; sourceTree = "<group>"; };
+		BCA4CE4259B80438C1408454 /* Pods_Pickup_Basketball_Queue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pickup_Basketball_Queue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC96F862DA60AEDC316B6591 /* Pods_Pickup_Basketball_QueueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pickup_Basketball_QueueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E691039C630D40055DDD0 /* Pods_Pickup_Basketball_Queue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D34D09E76782578A3EB5C3 /* Pods_Pickup_Basketball_QueueTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +84,8 @@
 				850D1909249AAA6200A08DE2 /* Pickup-Basketball-Queue */,
 				850D1920249AAA6600A08DE2 /* Pickup-Basketball-QueueTests */,
 				850D1908249AAA6200A08DE2 /* Products */,
+				8AF330D9C5FF370B85350B56 /* Pods */,
+				8A6140C294345E3A8255F1AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +106,7 @@
 				850D192D249AADB400A08DE2 /* Model */,
 				850D192C249AADAB00A08DE2 /* Services */,
 				850D190A249AAA6200A08DE2 /* AppDelegate.swift */,
+				85A35D14249E98DA00831D8A /* GoogleService-Info.plist */,
 				850D190C249AAA6200A08DE2 /* SceneDelegate.swift */,
 				850D1910249AAA6200A08DE2 /* Main.storyboard */,
 				850D1913249AAA6600A08DE2 /* Assets.xcassets */,
@@ -143,6 +158,26 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		8A6140C294345E3A8255F1AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCA4CE4259B80438C1408454 /* Pods_Pickup_Basketball_Queue.framework */,
+				FC96F862DA60AEDC316B6591 /* Pods_Pickup_Basketball_QueueTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8AF330D9C5FF370B85350B56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1284A5775CBD4C471872BD7E /* Pods-Pickup-Basketball-Queue.debug.xcconfig */,
+				43FF6C31D4130403688A087A /* Pods-Pickup-Basketball-Queue.release.xcconfig */,
+				6F1D5F8A82132076E3DBE4A4 /* Pods-Pickup-Basketball-QueueTests.debug.xcconfig */,
+				9829A58B254CBF1767FB2169 /* Pods-Pickup-Basketball-QueueTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 850D1926249AAA6700A08DE2 /* Build configuration list for PBXNativeTarget "Pickup-Basketball-Queue" */;
 			buildPhases = (
+				6AD3E8F1D18A4AD10841B096 /* [CP] Check Pods Manifest.lock */,
 				850D1903249AAA6200A08DE2 /* Sources */,
 				850D1904249AAA6200A08DE2 /* Frameworks */,
 				850D1905249AAA6200A08DE2 /* Resources */,
+				0B9FA6E36F0AC688AA569716 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,6 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 850D1929249AAA6700A08DE2 /* Build configuration list for PBXNativeTarget "Pickup-Basketball-QueueTests" */;
 			buildPhases = (
+				87D3836470C12C54001B51E3 /* [CP] Check Pods Manifest.lock */,
 				850D1919249AAA6600A08DE2 /* Sources */,
 				850D191A249AAA6600A08DE2 /* Frameworks */,
 				850D191B249AAA6600A08DE2 /* Resources */,
@@ -227,6 +265,7 @@
 				850D1917249AAA6600A08DE2 /* LaunchScreen.storyboard in Resources */,
 				850D1914249AAA6600A08DE2 /* Assets.xcassets in Resources */,
 				850D1912249AAA6200A08DE2 /* Main.storyboard in Resources */,
+				85A35D15249E98DA00831D8A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +277,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B9FA6E36F0AC688AA569716 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pickup-Basketball-Queue/Pods-Pickup-Basketball-Queue-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pickup-Basketball-Queue/Pods-Pickup-Basketball-Queue-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pickup-Basketball-Queue/Pods-Pickup-Basketball-Queue-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AD3E8F1D18A4AD10841B096 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pickup-Basketball-Queue-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87D3836470C12C54001B51E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pickup-Basketball-QueueTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		850D1903249AAA6200A08DE2 /* Sources */ = {
@@ -408,6 +511,7 @@
 		};
 		850D1927249AAA6700A08DE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1284A5775CBD4C471872BD7E /* Pods-Pickup-Basketball-Queue.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -425,6 +529,7 @@
 		};
 		850D1928249AAA6700A08DE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43FF6C31D4130403688A087A /* Pods-Pickup-Basketball-Queue.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,6 +547,7 @@
 		};
 		850D192A249AAA6700A08DE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F1D5F8A82132076E3DBE4A4 /* Pods-Pickup-Basketball-QueueTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -463,6 +569,7 @@
 		};
 		850D192B249AAA6700A08DE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9829A58B254CBF1767FB2169 /* Pods-Pickup-Basketball-QueueTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>576361394569-ff7u4ip8r6p53e62urjtieru636m08rc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.576361394569-ff7u4ip8r6p53e62urjtieru636m08rc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCRx-nokX2oO2mpI72eZ_w9JbZNhVaMQvk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>576361394569</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>edu.umich.barteaga.Pickup-Basketball-Queue</string>
+	<key>PROJECT_ID</key>
+	<string>basketball-queue-34898</string>
+	<key>STORAGE_BUCKET</key>
+	<string>basketball-queue-34898.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:576361394569:ios:84ae84b82238be7ef93158</string>
+	<key>DATABASE_URL</key>
+	<string>https://basketball-queue-34898.firebaseio.com</string>
+</dict>
+</plist>

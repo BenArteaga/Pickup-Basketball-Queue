@@ -1,0 +1,6 @@
+framework module Pods_Pickup_Basketball_QueueTests {
+  umbrella header "Pods-Pickup-Basketball-QueueTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
