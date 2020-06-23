@@ -19,6 +19,7 @@
 		85A35D11249D2A5E00831D8A /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D10249D2A5E00831D8A /* PlayerVC.swift */; };
 		85A35D13249D2A7100831D8A /* GymVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D12249D2A7100831D8A /* GymVC.swift */; };
 		85A35D15249E98DA00831D8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85A35D14249E98DA00831D8A /* GoogleService-Info.plist */; };
+		85A35D1724A18EBB00831D8A /* QueueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D1624A18EBB00831D8A /* QueueCell.swift */; };
 		C6D34D09E76782578A3EB5C3 /* Pods_Pickup_Basketball_QueueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC96F862DA60AEDC316B6591 /* Pods_Pickup_Basketball_QueueTests.framework */; };
 		DB6E691039C630D40055DDD0 /* Pods_Pickup_Basketball_Queue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA4CE4259B80438C1408454 /* Pods_Pickup_Basketball_Queue.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,7 @@
 		85A35D10249D2A5E00831D8A /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		85A35D12249D2A7100831D8A /* GymVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymVC.swift; sourceTree = "<group>"; };
 		85A35D14249E98DA00831D8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		85A35D1624A18EBB00831D8A /* QueueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueCell.swift; sourceTree = "<group>"; };
 		9829A58B254CBF1767FB2169 /* Pods-Pickup-Basketball-QueueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pickup-Basketball-QueueTests.release.xcconfig"; path = "Target Support Files/Pods-Pickup-Basketball-QueueTests/Pods-Pickup-Basketball-QueueTests.release.xcconfig"; sourceTree = "<group>"; };
 		BCA4CE4259B80438C1408454 /* Pods_Pickup_Basketball_Queue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pickup_Basketball_Queue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC96F862DA60AEDC316B6591 /* Pods_Pickup_Basketball_QueueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pickup_Basketball_QueueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 		850D192E249AADBC00A08DE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				85A35D1624A18EBB00831D8A /* QueueCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				850D1937249D1B8600A08DE2 /* AuthService.swift in Sources */,
 				85A35D13249D2A7100831D8A /* GymVC.swift in Sources */,
 				850D1931249AADFA00A08DE2 /* SignInVC.swift in Sources */,
+				85A35D1724A18EBB00831D8A /* QueueCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

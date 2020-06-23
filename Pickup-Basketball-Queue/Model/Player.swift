@@ -12,6 +12,7 @@ class Player {
     fileprivate var _playerId: String
     fileprivate var _userId: String?
     fileprivate var _queuePosition: Int?
+    fileprivate var _imagePath: String?
     
     var playerId: String {
         return _playerId
@@ -25,11 +26,16 @@ class Player {
         return _queuePosition
     }
     
+    var imagePath: String? {
+        return _imagePath
+    }
+    
     //regular initializer
-    init(in_playerId: String, in_userId: String?, in_queuePosition: Int?) {
+    init(in_playerId: String, in_userId: String?, in_queuePosition: Int?, in_imagePath: String?) {
         _playerId = in_playerId
         _userId = in_userId
         _queuePosition = in_queuePosition
+        _imagePath = in_imagePath
     }
     
     //initializes instance of a player by using firebase data in the form of a dictionary
@@ -37,6 +43,7 @@ class Player {
         _playerId = in_playerId
         _userId = playerData["user"] as? String
         _queuePosition = playerData["position"] as? Int
+        _imagePath = playerData["image"] as? String
     }
     
     //creates an array of player objects (which the queue will consist of) from firebase data
