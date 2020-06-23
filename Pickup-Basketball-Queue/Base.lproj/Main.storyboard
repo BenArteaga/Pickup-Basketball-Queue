@@ -187,6 +187,58 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="655" id="V2G-hV-DhM"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="zRo-F7-z4a">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zRo-F7-z4a" id="GYI-ff-a4r">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICc-9K-PcR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="52" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="c1w-sj-dsl"/>
+                                                        <constraint firstAttribute="width" constant="52" id="ndn-hB-dZP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VQY-lU-0Mu">
+                                                    <rect key="frame" x="60" y="0.0" width="76" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="76" id="UBU-LK-HHS"/>
+                                                        <constraint firstAttribute="height" constant="70" id="qDx-mU-Prt"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRQ-hX-SYa">
+                                                    <rect key="frame" x="158" y="11" width="236" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="236" id="Iue-cn-4fE"/>
+                                                        <constraint firstAttribute="height" constant="48" id="ST2-lk-Vt8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eRQ-hX-SYa" firstAttribute="leading" secondItem="VQY-lU-0Mu" secondAttribute="trailing" constant="22" id="EAK-DA-3Mo"/>
+                                                <constraint firstItem="VQY-lU-0Mu" firstAttribute="top" secondItem="ICc-9K-PcR" secondAttribute="top" id="EKn-kA-r1O"/>
+                                                <constraint firstItem="eRQ-hX-SYa" firstAttribute="leading" secondItem="VQY-lU-0Mu" secondAttribute="trailing" constant="22" id="J8r-i2-9Pj"/>
+                                                <constraint firstItem="ICc-9K-PcR" firstAttribute="leading" secondItem="GYI-ff-a4r" secondAttribute="leading" id="Nii-vW-qSp"/>
+                                                <constraint firstItem="eRQ-hX-SYa" firstAttribute="top" secondItem="GYI-ff-a4r" secondAttribute="topMargin" id="Rmh-wg-UX9"/>
+                                                <constraint firstAttribute="bottom" secondItem="ICc-9K-PcR" secondAttribute="bottom" id="VYv-8N-chW"/>
+                                                <constraint firstItem="eRQ-hX-SYa" firstAttribute="trailing" secondItem="GYI-ff-a4r" secondAttribute="trailingMargin" id="gOZ-fo-DxX"/>
+                                                <constraint firstItem="VQY-lU-0Mu" firstAttribute="leading" secondItem="ICc-9K-PcR" secondAttribute="trailing" constant="8" id="jzr-Nm-Qm3"/>
+                                                <constraint firstItem="VQY-lU-0Mu" firstAttribute="centerY" secondItem="eRQ-hX-SYa" secondAttribute="centerY" id="nEd-dJ-bts"/>
+                                                <constraint firstItem="eRQ-hX-SYa" firstAttribute="bottom" secondItem="GYI-ff-a4r" secondAttribute="bottomMargin" id="qwx-1y-tQz"/>
+                                                <constraint firstItem="ICc-9K-PcR" firstAttribute="top" secondItem="GYI-ff-a4r" secondAttribute="top" id="r8T-uv-vOa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSl-Ab-m75">
                                 <rect key="frame" x="133" y="741" width="148" height="57"/>

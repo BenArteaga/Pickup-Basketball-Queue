@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerVC: UIViewController {
+class PlayerVC: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var playerQueue: UITableView!
     @IBOutlet weak var getOnQueueBtn: UIButton!
@@ -17,6 +17,10 @@ class PlayerVC: UIViewController {
         super.viewDidLoad()
         
         getOnQueueBtn.layer.cornerRadius = 10
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 
 }
