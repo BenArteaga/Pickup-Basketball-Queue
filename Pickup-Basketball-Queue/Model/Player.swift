@@ -10,40 +10,40 @@ import Foundation
 
 class Player {
     fileprivate var _playerId: String
-    fileprivate var _userId: String?
     fileprivate var _queuePosition: Int?
-    fileprivate var _imagePath: String?
+    fileprivate var _imagePath: String
+    fileprivate var _playerName: String?
     
     var playerId: String {
         return _playerId
-    }
-    
-    var userId: String? {
-        return _userId
     }
     
     var queuePosition: Int? {
         return _queuePosition
     }
     
-    var imagePath: String? {
+    var imagePath: String {
         return _imagePath
     }
     
+    var playerName: String? {
+        return _playerName
+    }
+    
     //regular initializer
-    init(in_playerId: String, in_userId: String?, in_queuePosition: Int?, in_imagePath: String?) {
+    init(in_playerId: String, in_queuePosition: Int?, in_imagePath: String, in_playerName: String?) {
         _playerId = in_playerId
-        _userId = in_userId
         _queuePosition = in_queuePosition
         _imagePath = in_imagePath
+        _playerName = in_playerName
     }
     
     //initializes instance of a player by using firebase data in the form of a dictionary
     init(in_playerId: String, playerData: Dictionary<String, AnyObject>) {
         _playerId = in_playerId
-        _userId = playerData["user"] as? String
         _queuePosition = playerData["position"] as? Int
-        _imagePath = playerData["image"] as? String
+        _imagePath = playerData["image"] as! String
+        _playerName = playerData["player"] as? String
     }
     
     //creates an array of player objects (which the queue will consist of) from firebase data

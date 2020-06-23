@@ -188,7 +188,7 @@
                                     <constraint firstAttribute="height" constant="655" id="V2G-hV-DhM"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="zRo-F7-z4a">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="zRo-F7-z4a" customClass="QueueCell" customModule="Pickup_Basketball_Queue" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zRo-F7-z4a" id="GYI-ff-a4r">
@@ -237,6 +237,11 @@
                                                 <constraint firstItem="ICc-9K-PcR" firstAttribute="top" secondItem="GYI-ff-a4r" secondAttribute="top" id="r8T-uv-vOa"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerImg" destination="VQY-lU-0Mu" id="yb3-wM-rYq"/>
+                                            <outlet property="playerNameLabel" destination="eRQ-hX-SYa" id="4u2-m2-DXN"/>
+                                            <outlet property="queuePositionLabel" destination="ICc-9K-PcR" id="n1E-3f-lzl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
