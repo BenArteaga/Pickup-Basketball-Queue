@@ -61,6 +61,9 @@ class SignInVC: UIViewController {
                     self.performSegue(withIdentifier: "SignInViewtoPlayerCreationView", sender: nil)
                 }
                 else {
+                    if(AuthService.instance.isGym == true) {
+                        self.showAlert(title: "Error", message: "It appears you already have a gym account and you cannot create both a gym and player account under the same credentials")
+                    }
                     self.performSegue(withIdentifier: "SignInViewtoPlayerView", sender: nil)
                 }
             }
@@ -84,11 +87,14 @@ class SignInVC: UIViewController {
         AuthService.instance.emailLogin(email, password: password) { (success, message) in
             if success {
                 AuthService.instance.isLoggedIn = true
-                AuthService.instance.isGym = true
                 if AuthService.instance.firstTime {
+                    AuthService.instance.isGym = true
                     self.performSegue(withIdentifier: "SignInViewtoGymCreationView", sender: nil)
                 }
                 else {
+                    if(AuthService.instance.isGym != true) {
+                        self.showAlert(title: "Error", message: "It appears you already have a player account and you cannot make both a gym and player account under the same credentials")
+                    }
                     self.performSegue(withIdentifier: "SignInViewtoGymView", sender: nil)
                 }
             }
