@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class GymVC: UIViewController {
 
@@ -18,5 +19,14 @@ class GymVC: UIViewController {
         openQueueBtn.layer.cornerRadius = 15
     }
 
-
+    @IBAction func LogOutBtnPressed(_ sender: UIButton) {
+        do {
+            try Firebase.Auth.auth().signOut()
+            AuthService.instance.isLoggedIn = false
+            performSegue(withIdentifier: "GymViewtoSignInView", sender: nil)
+        } catch {
+            print("An error occured signing out")
+        }
+    }
+    
 }

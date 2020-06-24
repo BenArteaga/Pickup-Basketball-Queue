@@ -239,17 +239,37 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqJ-kE-SxQ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gym Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZR-Wr-13b">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Gym Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZR-Wr-13b">
                                         <rect key="frame" x="138" y="14" width="139" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1R-zO-FXr">
+                                        <rect key="frame" x="343" y="8" width="63" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="MSH-uL-yFf"/>
+                                            <constraint firstAttribute="width" constant="63" id="U0H-pl-sAa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="LogOutBtnPressed:" destination="6fj-VG-58H" eventType="touchUpInside" id="Hyb-j5-oRJ"/>
+                                            <action selector="LogOutBtnPressed:" destination="xys-QL-Tvq" eventType="touchUpInside" id="mJ6-Ub-8rO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="QZR-Wr-13b" firstAttribute="centerY" secondItem="kqJ-kE-SxQ" secondAttribute="centerY" id="756-ZJ-OGt"/>
+                                    <constraint firstItem="QZR-Wr-13b" firstAttribute="centerX" secondItem="kqJ-kE-SxQ" secondAttribute="centerX" id="ADG-Vi-EkY"/>
+                                    <constraint firstItem="H1R-zO-FXr" firstAttribute="leading" secondItem="QZR-Wr-13b" secondAttribute="trailing" constant="66" id="M0e-14-PEh"/>
+                                    <constraint firstItem="H1R-zO-FXr" firstAttribute="trailing" secondItem="kqJ-kE-SxQ" secondAttribute="trailingMargin" id="Nzp-wx-9gS"/>
+                                    <constraint firstItem="QZR-Wr-13b" firstAttribute="top" secondItem="kqJ-kE-SxQ" secondAttribute="top" constant="14" id="iv8-ha-Sb1"/>
                                     <constraint firstAttribute="height" constant="70" id="yDZ-yq-2af"/>
+                                    <constraint firstItem="H1R-zO-FXr" firstAttribute="top" secondItem="kqJ-kE-SxQ" secondAttribute="topMargin" id="zfy-Og-ky1"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UyN-3y-6SG">
