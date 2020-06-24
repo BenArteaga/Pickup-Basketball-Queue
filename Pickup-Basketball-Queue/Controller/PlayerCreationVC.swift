@@ -8,12 +8,26 @@
 
 import UIKit
 
-class PlayerCreationVC: UIViewController {
-
+class PlayerCreationVC: UIViewController, UIImagePickerControllerDelegate,  UINavigationControllerDelegate{
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var profilePicBtn: UIButton!
+    
+    var imagePicker: UIImagePickerController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
     }
-
+    
+    @IBAction func profilePicBtnPressed(_ sender: UIButton) {
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        imagePicker.dismiss(animated: true, completion: nil)
+        profilePicBtn.imageView?.image = selectedImage
+    }
+    
 }

@@ -189,6 +189,9 @@
                                     <constraint firstAttribute="width" constant="154" id="3ff-fd-QQc"/>
                                 </constraints>
                                 <state key="normal" image="camera"/>
+                                <connections>
+                                    <action selector="profilePicBtnPressed:" destination="Kck-QE-mof" eventType="touchUpInside" id="1id-JZ-R1m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -221,6 +224,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="3Q8-tC-DK0"/>
                     <connections>
+                        <outlet property="profilePicBtn" destination="63W-gy-3U7" id="Zj0-10-Ju8"/>
+                        <outlet property="usernameTextField" destination="PXu-V8-ags" id="se9-mC-SRH"/>
                         <segue destination="6fj-VG-58H" kind="show" identifier="PlayerCreationViewtoPlayerView" id="FR6-d5-MG0"/>
                     </connections>
                 </viewController>
