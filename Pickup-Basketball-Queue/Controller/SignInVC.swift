@@ -25,14 +25,14 @@ class SignInVC: UIViewController {
 
     //if a user is already logged in, this function will grab the username and skip the login page, going straight to either the player page or gym page
      override func viewDidAppear(_ animated: Bool) {
-         if AuthService.instance.isLoggedIn {
+        if Firebase.Auth.auth().currentUser != nil {
             if(AuthService.instance.isGym) {
                 performSegue(withIdentifier: "SignInViewtoGymView", sender: nil)
             }
             else {
                 performSegue(withIdentifier: "SignInViewtoPlayerView", sender: nil)
             }
-         }
+        }
      }
      
      //takes a title and message and uses them to create and show a custom alert
@@ -56,6 +56,7 @@ class SignInVC: UIViewController {
         
         AuthService.instance.emailLogin(email, password: password) { (success, message) in
             if success {
+                AuthService.instance.isLoggedIn = true
                 if AuthService.instance.firstTime {
                     self.performSegue(withIdentifier: "SignInViewtoPlayerCreationView", sender: nil)
                 }
@@ -82,6 +83,7 @@ class SignInVC: UIViewController {
         
         AuthService.instance.emailLogin(email, password: password) { (success, message) in
             if success {
+                AuthService.instance.isLoggedIn = true
                 AuthService.instance.isGym = true
                 if AuthService.instance.firstTime {
                     self.performSegue(withIdentifier: "SignInViewtoGymCreationView", sender: nil)

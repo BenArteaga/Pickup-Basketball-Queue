@@ -31,11 +31,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="SignInView" customClass="SignInVC" customModule="Pickup_Basketball_Queue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O3V-wH-CQT">
-                                <rect key="frame" x="55" y="185" width="304" height="34"/>
+                                <rect key="frame" x="55" y="141" width="304" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="kBH-oe-d7i"/>
                                 </constraints>
@@ -43,7 +43,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nsI-vR-sPI">
-                                <rect key="frame" x="55" y="245" width="304" height="34"/>
+                                <rect key="frame" x="55" y="201" width="304" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="UW7-b4-e56"/>
                                 </constraints>
@@ -51,7 +51,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhp-r6-IzS">
-                                <rect key="frame" x="133.5" y="385" width="147" height="48"/>
+                                <rect key="frame" x="133.5" y="341" width="147" height="48"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="147" id="1k1-Ew-Wpa"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Runs Queue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoJ-Vb-GCO">
-                                <rect key="frame" x="55" y="74" width="304" height="77"/>
+                                <rect key="frame" x="55" y="30" width="304" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="77" id="fxE-xn-fnD"/>
                                 </constraints>
@@ -75,7 +75,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fs-gb-Eja">
-                                <rect key="frame" x="133.5" y="310" width="147" height="48"/>
+                                <rect key="frame" x="133.5" y="266" width="147" height="48"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="147" id="CMW-Ha-uKL"/>
@@ -112,6 +112,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="WZS-7y-vwO"/>
                     <connections>
                         <outlet property="EmailTextField" destination="O3V-wH-CQT" id="rH7-Wc-LDS"/>
                         <outlet property="PasswordTextField" destination="nsI-vR-sPI" id="zaQ-Kf-7ru"/>
@@ -272,6 +273,7 @@
                     <navigationItem key="navigationItem" id="jWH-wu-O1d"/>
                     <connections>
                         <outlet property="openQueueBtn" destination="UyN-3y-6SG" id="JK2-AK-CaJ"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="GymViewtoSignInView" id="3zL-7z-vap"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbk-Ag-QrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -296,9 +298,25 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrv-Q1-EQe">
+                                        <rect key="frame" x="343" y="8" width="63" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="63" id="1yy-ml-5H3"/>
+                                            <constraint firstAttribute="height" constant="30" id="gDD-K4-qCL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="LogOutBtnPressed:" destination="6fj-VG-58H" eventType="touchUpInside" id="zzn-ft-3MS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Zrv-Q1-EQe" firstAttribute="top" secondItem="m0R-6f-fjd" secondAttribute="top" constant="8" id="IpZ-M7-XuL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zrv-Q1-EQe" secondAttribute="trailing" constant="8" id="P3W-CV-NWb"/>
                                     <constraint firstAttribute="height" constant="70" id="bep-RK-TdY"/>
                                 </constraints>
                             </view>
@@ -398,6 +416,7 @@
                     <connections>
                         <outlet property="getOnQueueBtn" destination="QSl-Ab-m75" id="VIO-OI-vH1"/>
                         <outlet property="playerQueue" destination="1tG-T2-hMt" id="osb-uD-zt3"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="PlayerViewtoSignInView" id="Cte-QW-Est"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opX-oa-9Sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -407,7 +426,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="FR6-d5-MG0"/>
-        <segue reference="PJf-R4-xES"/>
+        <segue reference="eug-70-fEw"/>
+        <segue reference="3zL-7z-vap"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" width="100" height="77"/>

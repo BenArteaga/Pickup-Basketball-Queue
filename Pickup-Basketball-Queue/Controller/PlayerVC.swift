@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PlayerVC: UIViewController, UITableViewDelegate {
 
@@ -22,5 +23,15 @@ class PlayerVC: UIViewController, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
-
+    
+    @IBAction func LogOutBtnPressed(_ sender: UIButton) {
+        do {
+            try Firebase.Auth.auth().signOut()
+            AuthService.instance.isLoggedIn = false
+            performSegue(withIdentifier: "PlayerViewtoSignInView", sender: nil)
+        } catch {
+            print("An error occured signing out")
+        }
+    }
+    
 }
