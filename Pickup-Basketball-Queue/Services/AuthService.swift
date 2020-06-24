@@ -15,6 +15,7 @@ class AuthService {
     var username: String?
     var isLoggedIn = false
     var isGym = false
+    var firstTime = false
     
     func emailLogin(_ email: String, password: String, completion: @escaping (_ Success: Bool, _ message: String) -> Void) {
         Firebase.Auth.auth().signIn(withEmail: email, password: password, completion: {
@@ -22,6 +23,7 @@ class AuthService {
             if error != nil {
                 if let errorCode = Firebase.AuthErrorCode(rawValue: (error?._code)!) {
                     if errorCode == .userNotFound {
+                        self.firstTime = true
                         Firebase.Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
                             if error != nil {
                                 completion(false, "Error creating account")

@@ -25,7 +25,6 @@ class SignInVC: UIViewController {
 
     //if a user is already logged in, this function will grab the username and skip the login page, going straight to either the player page or gym page
      override func viewDidAppear(_ animated: Bool) {
-         setUsername()
          if AuthService.instance.isLoggedIn {
             if(AuthService.instance.isGym) {
                 performSegue(withIdentifier: "SignInViewtoGymView", sender: nil)
@@ -43,21 +42,6 @@ class SignInVC: UIViewController {
          alertController.addAction(okAction)
          self.present(alertController, animated: true, completion: nil)
      }
-     
-    //sets the username of the current user to the first part of their email
-     func setUsername() {
-         if let user = Firebase.Auth.auth().currentUser {
-             AuthService.instance.isLoggedIn = true
-             let emailComponents = user.email?.components(separatedBy: "@")
-             if let username = emailComponents?[0] {
-                 AuthService.instance.username = username
-             }
-             else {
-                 AuthService.instance.isLoggedIn = false
-                 AuthService.instance.username = nil
-             }
-         }
-     }
     
     @IBAction func playerSignInTapped(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
@@ -72,8 +56,12 @@ class SignInVC: UIViewController {
         
         AuthService.instance.emailLogin(email, password: password) { (success, message) in
             if success {
-                self.setUsername()
-                self.performSegue(withIdentifier: "SignInViewtoPlayerView", sender: nil)
+                if AuthService.instance.firstTime {
+                    self.performSegue(withIdentifier: "SignInViewtoPlayerCreationView", sender: nil)
+                }
+                else {
+                    self.performSegue(withIdentifier: "SignInViewtoPlayerView", sender: nil)
+                }
             }
             else {
                 self.showAlert(title: "Failure", message: message)
@@ -95,8 +83,12 @@ class SignInVC: UIViewController {
         AuthService.instance.emailLogin(email, password: password) { (success, message) in
             if success {
                 AuthService.instance.isGym = true
-                self.setUsername()
-                self.performSegue(withIdentifier: "SignInViewtoGymView", sender: nil)
+                if AuthService.instance.firstTime {
+                    self.performSegue(withIdentifier: "SignInViewtoGymCreationView", sender: nil)
+                }
+                else {
+                    self.performSegue(withIdentifier: "SignInViewtoGymView", sender: nil)
+                }
             }
             else {
                 self.showAlert(title: "Failure", message: message)

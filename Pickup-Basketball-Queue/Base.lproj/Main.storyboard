@@ -7,6 +7,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--GymCreationView-->
+        <scene sceneID="Zw8-sG-rVy">
+            <objects>
+                <viewController id="UD3-fm-MDM" userLabel="GymCreationView" customClass="GymCreationVC" customModule="Pickup_Basketball_Queue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fz5-a7-1pi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="SiT-n0-KHJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CDy-7N-q1d"/>
+                    <connections>
+                        <segue destination="xys-QL-Tvq" kind="show" identifier="GymCreationViewtoGymView" id="PJf-R4-xES"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QfK-97-e79" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1147" y="139"/>
+        </scene>
         <!--SignInView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -100,11 +119,32 @@
                         <outlet property="playerSignInBtn" destination="3fs-gb-Eja" id="6Gq-KU-hOd"/>
                         <segue destination="6fj-VG-58H" kind="show" identifier="SignInViewtoPlayerView" id="0pq-vH-y6a"/>
                         <segue destination="xys-QL-Tvq" kind="show" identifier="SignInViewtoGymView" id="eug-70-fEw"/>
+                        <segue destination="Kck-QE-mof" kind="show" identifier="SignInViewtoPlayerCreationView" id="e1u-ah-3fR"/>
+                        <segue destination="UD3-fm-MDM" kind="show" identifier="SignInViewtoGymCreationView" id="31M-ED-BgH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+        </scene>
+        <!--PlayerCreationView-->
+        <scene sceneID="Fv7-VD-jy4">
+            <objects>
+                <viewController id="Kck-QE-mof" userLabel="PlayerCreationView" customClass="PlayerCreationVC" customModule="Pickup_Basketball_Queue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RTv-4e-KJ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="63c-zD-hW1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Q8-tC-DK0"/>
+                    <connections>
+                        <segue destination="6fj-VG-58H" kind="show" identifier="PlayerCreationViewtoPlayerView" id="FR6-d5-MG0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QVC-G6-gUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1301" y="108"/>
         </scene>
         <!--GymView-->
         <scene sceneID="k1o-D4-CTL">
@@ -284,4 +324,8 @@
             <point key="canvasLocation" x="976.81159420289862" y="900.66964285714278"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FR6-d5-MG0"/>
+        <segue reference="PJf-R4-xES"/>
+    </inferredMetricsTieBreakers>
 </document>
