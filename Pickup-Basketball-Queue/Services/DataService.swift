@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import Firebase
+import FirebaseDatabase.FIRDataSnapshot
 
 protocol DataServiceDelegate: class {
     func dataLoaded()
@@ -16,15 +16,13 @@ protocol DataServiceDelegate: class {
 
 class DataService {
     static let instance = DataService()
-    let ref = Firebase.Database.database().reference()
     var players: [Player] = []
     weak var delegate: DataServiceDelegate?
     
     func savePlayer(username: String?, imagePath: String?, queuePosition: Int?) {
-        let key = ref.childByAutoId().key
         let player = ["player": username ?? "", "image": imagePath ?? "", "position": queuePosition ?? 0] as [String : Any]
-        let playerUpdate = ["\(String(describing: key))": player]
-        ref.updateChildValues(playerUpdate)
+        let playerRef = Database.database().reference().child("players").child(AuthService.instance.email!).childByAutoId
+        playerRef().updateChildValues(player)
     }
     
     func imageForPath(_ path: String) -> UIImage? {

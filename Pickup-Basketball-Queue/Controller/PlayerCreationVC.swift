@@ -22,6 +22,8 @@ class PlayerCreationVC: UIViewController, UIImagePickerControllerDelegate,  UINa
     }
     
     @IBAction func profilePicBtnPressed(_ sender: UIButton) {
+        let imgPath = 
+        DataService.instance.savePlayer(username: usernameTextField.text, imagePath: <#T##String?#>, queuePosition: <#T##Int?#>)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

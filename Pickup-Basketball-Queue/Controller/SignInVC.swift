@@ -56,6 +56,7 @@ class SignInVC: UIViewController {
         
         AuthService.instance.emailLogin(email, password: password) { (success, message) in
             if success {
+                AuthService.instance.email = self.emailTextField.text
                 AuthService.instance.isLoggedIn = true
                 if AuthService.instance.firstTime {
                     self.performSegue(withIdentifier: "SignInViewtoPlayerCreationView", sender: nil)

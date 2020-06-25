@@ -12,7 +12,7 @@ import Firebase
 class AuthService {
     static let instance = AuthService()
     
-    var username: String?
+    var email: String?
     var isLoggedIn = false
     var isGym = false
     var firstTime = false
