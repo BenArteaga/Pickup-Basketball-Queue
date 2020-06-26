@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 import FirebaseDatabase.FIRDataSnapshot
 import FirebaseStorage
 
@@ -22,14 +23,16 @@ class DataService {
     
     //saves player to FirebaseDatabase in the form of a dictionary
     func savePlayer(username: String?, imagePath: String?, queuePosition: Int?) {
+        let userID = Auth.auth().currentUser!.uid
         let player = ["player": username ?? "", "image": imagePath ?? "", "position": queuePosition ?? 0] as [String : Any]
-        let playerRef = Database.database().reference().child("players").child(AuthService.instance.email!).childByAutoId
+        let playerRef = Database.database().reference().child("players").child(userID).childByAutoId
         playerRef().updateChildValues(player)
     }
     
     //saves image to FirebaseStorage and then calls savePlayer with the imageUrl as a string
     func savePlayerWithImage(username: String?, image: UIImage, queuePosition: Int?) {
-        let imageRef = Storage.storage().reference().child(AuthService.instance.email!)
+        let userID = Auth.auth().currentUser!.uid
+        let imageRef = Storage.storage().reference().child(userID)
         StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
             guard let downloadURL = downloadURL else {
                 return
