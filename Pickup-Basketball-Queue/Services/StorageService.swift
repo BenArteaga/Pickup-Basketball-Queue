@@ -10,7 +10,7 @@ import Foundation
 import FirebaseStorage
 
 struct StorageService {
-    
+    static let instance = StorageService()
     //function to take in a UIImage and upload its data to FirebaseStorage
     static func uploadImage(_ image: UIImage, at reference: StorageReference, completion: @escaping (URL?) -> Void) {
         //change UI image to data and reduce quality of image

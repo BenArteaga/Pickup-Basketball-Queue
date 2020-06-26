@@ -34,11 +34,17 @@ class AuthService {
                         })
                     }
                     else {
-                        completion(false, "Sorry, incorrect email or password")
+                        if errorCode == .networkError {
+                            completion(false, "Sorry it appears you have a network connection error")
+                        }
+                        else {
+                            completion(false, "Sorry, incorrect email or password")
+                        }
                     }
                 }
             }
             else {
+                self.firstTime = false
                 completion(true, "Successfully Logged In")
             }
         })

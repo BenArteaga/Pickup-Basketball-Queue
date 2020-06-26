@@ -188,15 +188,38 @@
                                     <constraint firstAttribute="height" constant="154" id="0zr-aw-nye"/>
                                     <constraint firstAttribute="width" constant="154" id="3ff-fd-QQc"/>
                                 </constraints>
-                                <state key="normal" image="camera"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                <state key="normal" title="+ Add Pic">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="profilePicBtnPressed:" destination="Kck-QE-mof" eventType="touchUpInside" id="1id-JZ-R1m"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="456-iE-ZTl">
+                                <rect key="frame" x="130" y="632" width="154" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneBtnPressed:" destination="Kck-QE-mof" eventType="touchUpInside" id="whx-6r-64m"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ryK-di-9zo">
+                                <rect key="frame" x="130" y="415" width="154" height="154"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="154" id="307-Wn-A6h"/>
+                                    <constraint firstAttribute="width" constant="154" id="kfZ-Oa-wYn"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="PXu-V8-ags" firstAttribute="top" secondItem="PA9-g3-hlM" secondAttribute="bottom" constant="24" id="0W5-Zf-Hc1"/>
+                            <constraint firstItem="ryK-di-9zo" firstAttribute="top" secondItem="0Q7-he-EeV" secondAttribute="bottom" constant="27" id="1Mf-oB-VHH"/>
                             <constraint firstItem="VHv-Fk-iLw" firstAttribute="top" secondItem="63c-zD-hW1" secondAttribute="top" id="2vb-fs-gOf"/>
                             <constraint firstAttribute="trailing" secondItem="VHv-Fk-iLw" secondAttribute="trailing" id="4Hg-bq-t8A"/>
                             <constraint firstItem="PA9-g3-hlM" firstAttribute="leading" secondItem="63c-zD-hW1" secondAttribute="leading" constant="54" id="571-xK-ymC"/>
@@ -211,6 +234,7 @@
                             <constraint firstItem="PXu-V8-ags" firstAttribute="leading" secondItem="63c-zD-hW1" secondAttribute="leading" constant="54" id="NnN-1j-yyP"/>
                             <constraint firstItem="0Q7-he-EeV" firstAttribute="centerX" secondItem="RTv-4e-KJ2" secondAttribute="centerX" id="Of0-gn-2xO"/>
                             <constraint firstItem="0Q7-he-EeV" firstAttribute="leading" secondItem="63c-zD-hW1" secondAttribute="leading" constant="54" id="Ols-qa-PRm"/>
+                            <constraint firstItem="ryK-di-9zo" firstAttribute="leading" secondItem="63c-zD-hW1" secondAttribute="leading" constant="130" id="Pjl-in-weQ"/>
                             <constraint firstItem="PXu-V8-ags" firstAttribute="centerX" secondItem="RTv-4e-KJ2" secondAttribute="centerX" id="Qcn-YP-nhH"/>
                             <constraint firstItem="63W-gy-3U7" firstAttribute="top" secondItem="0Q7-he-EeV" secondAttribute="bottom" constant="27" id="Tpw-Pp-an2"/>
                             <constraint firstItem="63c-zD-hW1" firstAttribute="trailing" secondItem="PA9-g3-hlM" secondAttribute="trailing" constant="54" id="YyS-Yf-8QZ"/>
@@ -218,13 +242,16 @@
                             <constraint firstItem="63c-zD-hW1" firstAttribute="bottom" secondItem="63W-gy-3U7" secondAttribute="bottom" constant="239" id="eRr-i9-dWt"/>
                             <constraint firstItem="0Q7-he-EeV" firstAttribute="top" secondItem="PXu-V8-ags" secondAttribute="bottom" constant="54" id="r1R-Uh-3B6"/>
                             <constraint firstItem="PXu-V8-ags" firstAttribute="top" secondItem="PA9-g3-hlM" secondAttribute="bottom" constant="24" id="vqg-1y-cZJ"/>
+                            <constraint firstItem="63c-zD-hW1" firstAttribute="trailing" secondItem="ryK-di-9zo" secondAttribute="trailing" constant="130" id="xca-5S-fde"/>
                             <constraint firstItem="63W-gy-3U7" firstAttribute="leading" secondItem="63c-zD-hW1" secondAttribute="leading" constant="130" id="xgs-hr-xBn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="63c-zD-hW1"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Q8-tC-DK0"/>
                     <connections>
+                        <outlet property="doneBtn" destination="456-iE-ZTl" id="eZA-Qg-Tvl"/>
                         <outlet property="profilePicBtn" destination="63W-gy-3U7" id="Zj0-10-Ju8"/>
+                        <outlet property="profilePicImage" destination="ryK-di-9zo" id="wwL-Ii-V7C"/>
                         <outlet property="usernameTextField" destination="PXu-V8-ags" id="se9-mC-SRH"/>
                         <segue destination="6fj-VG-58H" kind="show" identifier="PlayerCreationViewtoPlayerView" id="FR6-d5-MG0"/>
                     </connections>
@@ -454,7 +481,4 @@
         <segue reference="eug-70-fEw"/>
         <segue reference="3zL-7z-vap"/>
     </inferredMetricsTieBreakers>
-    <resources>
-        <image name="camera" width="100" height="77"/>
-    </resources>
 </document>

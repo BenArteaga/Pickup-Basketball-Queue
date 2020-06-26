@@ -24,7 +24,7 @@ class QueueCell: UITableViewCell {
     func configureCell(player: Player) {
         playerNameLabel.text = player.playerName
         queuePositionLabel.text = "\(String(describing: player.queuePosition))"
-        playerImg.image = DataService.instance.imageForPath(player.imagePath)
+//        playerImg.image =
     }
 
 }
