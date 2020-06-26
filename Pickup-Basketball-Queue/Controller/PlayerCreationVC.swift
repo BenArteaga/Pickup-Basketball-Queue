@@ -21,7 +21,8 @@ class PlayerCreationVC: UIViewController, UIImagePickerControllerDelegate,  UINa
         super.viewDidLoad()
         
         doneBtn.layer.cornerRadius = 15
-        profilePicBtn.imageView?.layer.cornerRadius = 77
+        profilePicImage.layer.cornerRadius = 77
+        profilePicBtn.layer.cornerRadius = 77
         
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
