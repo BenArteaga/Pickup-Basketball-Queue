@@ -34,7 +34,6 @@ class PlayerCreationVC: UIViewController, UIImagePickerControllerDelegate,  UINa
     }
     
     @IBAction func doneBtnPressed(_ sender: UIButton) {
-        print(usernameTextField.text!)
         if let playerUsername = usernameTextField.text, let profilePic = profilePicImage.image {
             DataService.instance.savePlayerWithImage(username: playerUsername, image: profilePic, queuePosition: -1)
             self.performSegue(withIdentifier: "PlayerCreationViewtoPlayerView", sender: nil)
