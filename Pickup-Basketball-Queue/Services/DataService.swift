@@ -24,9 +24,10 @@ class DataService {
     //saves player to FirebaseDatabase in the form of a dictionary
     func savePlayer(username: String?, imagePath: String?, queuePosition: Int?) {
         let userID = Auth.auth().currentUser!.uid
-        let player = ["player": username ?? "", "image": imagePath ?? "", "position": queuePosition ?? 0] as [String : Any]
-        let playerRef = Database.database().reference().child("players").child(userID).childByAutoId
-        playerRef().updateChildValues(player)
+        //it should be okay to force unwrap because this function should never be called with empty values
+        let player = ["player": username!, "image": imagePath!, "position": queuePosition!] as [String : Any]
+        let playerRef = Database.database().reference().child("players").child(userID).childByAutoId()
+        playerRef.updateChildValues(player)
     }
     
     //saves image to FirebaseStorage and then calls savePlayer with the imageUrl as a string
@@ -40,6 +41,14 @@ class DataService {
             let urlString = downloadURL.absoluteString
             self.savePlayer(username: username, imagePath: urlString, queuePosition: queuePosition)
         }
+    }
+    
+    //saves gym to Firebase in the form of a dictionary
+    func saveGym(gymName: String?, numOfCourts: Int?) {
+        let userID = Auth.auth().currentUser!.uid
+        let gym = ["gym": gymName!, "courtCount": numOfCourts!] as [String : Any]
+        let gymRef = Database.database().reference().child("gyms").child(userID).childByAutoId()
+        gymRef.updateChildValues(gym)
     }
     
 //    func imageForPath(_ path: String) -> UIImage? {

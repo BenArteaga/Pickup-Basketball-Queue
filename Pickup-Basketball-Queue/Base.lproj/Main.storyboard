@@ -50,7 +50,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gym Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zeg-Ee-AFx">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of Courts" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zeg-Ee-AFx">
                                 <rect key="frame" x="74" y="381" width="266" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="1Wu-WY-0SQ"/>
@@ -84,6 +84,7 @@
                                 </state>
                                 <connections>
                                     <action selector="doneBtnPressed:" destination="Kck-QE-mof" eventType="touchUpInside" id="IPi-4w-A3F"/>
+                                    <action selector="doneBtnPressed:" destination="UD3-fm-MDM" eventType="touchUpInside" id="LYc-Bf-fPX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -115,6 +116,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="CDy-7N-q1d"/>
                     <connections>
+                        <outlet property="doneBtn" destination="uP8-Eb-iF8" id="STt-z7-LQc"/>
+                        <outlet property="gymNameTextField" destination="meB-3N-wgx" id="178-dI-vhd"/>
+                        <outlet property="numCourtsTextField" destination="zeg-Ee-AFx" id="3IQ-6A-TeZ"/>
                         <segue destination="xys-QL-Tvq" kind="show" identifier="GymCreationViewtoGymView" id="PJf-R4-xES"/>
                     </connections>
                 </viewController>

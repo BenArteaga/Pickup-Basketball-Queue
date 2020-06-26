@@ -9,11 +9,17 @@
 import UIKit
 
 class GymCreationVC: UIViewController {
-
+    @IBOutlet weak var gymNameTextField: UITextField!
+    @IBOutlet weak var numCourtsTextField: UITextField!
+    @IBOutlet weak var doneBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        doneBtn.layer.cornerRadius = 15
     }
 
+    @IBAction func doneBtnPressed(_ sender: UIButton) {
+        
+    }
 }
