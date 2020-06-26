@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseDatabase.FIRDataSnapshot
+import FirebaseStorage
 
 protocol DataServiceDelegate: class {
     func dataLoaded()
@@ -19,33 +20,46 @@ class DataService {
     var players: [Player] = []
     weak var delegate: DataServiceDelegate?
     
-    func savePlayer(username: String?, imagePath: String?, queuePosition: Int?) {
+    //saves player to FirebaseDatabase in the form of a dictionary
+    static func savePlayer(username: String?, imagePath: String?, queuePosition: Int?) {
         let player = ["player": username ?? "", "image": imagePath ?? "", "position": queuePosition ?? 0] as [String : Any]
         let playerRef = Database.database().reference().child("players").child(AuthService.instance.email!).childByAutoId
         playerRef().updateChildValues(player)
     }
     
-    func imageForPath(_ path: String) -> UIImage? {
-        let fullPath = documentsPathForFileName(path)
-        let image = UIImage(named: fullPath)
-        return image
+    //saves image to FirebaseStorage and then calls savePlayer with the imageUrl as a string
+    static func savePlayerWithImage(username: String?, image: UIImage, queuePosition: Int?) {
+        let imageRef = Storage.storage().reference().child(AuthService.instance.email!)
+        StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
+            guard let downloadURL = downloadURL else {
+                return
+            }
+            let urlString = downloadURL.absoluteString
+            savePlayer(username: username, imagePath: urlString, queuePosition: queuePosition)
+        }
     }
     
-    func documentsPathForFileName(_ name: String) -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let fullPath = paths[0] as NSString
-        return fullPath.appendingPathComponent(name)
-    }
-    
-    func saveImageAndCreatePath(_ image: UIImage) -> String {
-        //turns image into data
-        let imgData = image.pngData()
-        //makes sure that each time we save an image it will have a unique path name
-        let imgPath = "image\(Date.timeIntervalSinceReferenceDate).png"
-        let fullPath = documentsPathForFileName(imgPath)
-        //writes fullPath to disc
-        try? imgData?.write(to: URL(fileURLWithPath: fullPath), options: [.atomic])
-        //not sure why we are returning imgPath?
-        return imgPath
-    }
+//    func imageForPath(_ path: String) -> UIImage? {
+//        let fullPath = documentsPathForFileName(path)
+//        let image = UIImage(named: fullPath)
+//        return image
+//    }
+//
+//    func documentsPathForFileName(_ name: String) -> String {
+//        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+//        let fullPath = paths[0] as NSString
+//        return fullPath.appendingPathComponent(name)
+//    }
+//
+//    func saveImageAndCreatePath(_ image: UIImage) -> String {
+//        //turns image into data
+//        let imgData = image.pngData()
+//        //makes sure that each time we save an image it will have a unique path name
+//        let imgPath = "image\(Date.timeIntervalSinceReferenceDate).png"
+//        let fullPath = documentsPathForFileName(imgPath)
+//        //writes fullPath to disc
+//        try? imgData?.write(to: URL(fileURLWithPath: fullPath), options: [.atomic])
+//        //not sure why we are returning imgPath?
+//        return imgPath
+//    }
 }
