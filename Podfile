@@ -9,6 +9,7 @@ target 'Pickup-Basketball-Queue' do
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 
   target 'Pickup-Basketball-QueueTests' do
     inherit! :search_paths
