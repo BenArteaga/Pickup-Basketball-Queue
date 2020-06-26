@@ -21,21 +21,21 @@ class DataService {
     weak var delegate: DataServiceDelegate?
     
     //saves player to FirebaseDatabase in the form of a dictionary
-    static func savePlayer(username: String?, imagePath: String?, queuePosition: Int?) {
+    func savePlayer(username: String?, imagePath: String?, queuePosition: Int?) {
         let player = ["player": username ?? "", "image": imagePath ?? "", "position": queuePosition ?? 0] as [String : Any]
         let playerRef = Database.database().reference().child("players").child(AuthService.instance.email!).childByAutoId
         playerRef().updateChildValues(player)
     }
     
     //saves image to FirebaseStorage and then calls savePlayer with the imageUrl as a string
-    static func savePlayerWithImage(username: String?, image: UIImage, queuePosition: Int?) {
+    func savePlayerWithImage(username: String?, image: UIImage, queuePosition: Int?) {
         let imageRef = Storage.storage().reference().child(AuthService.instance.email!)
         StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
             guard let downloadURL = downloadURL else {
                 return
             }
             let urlString = downloadURL.absoluteString
-            savePlayer(username: username, imagePath: urlString, queuePosition: queuePosition)
+            self.savePlayer(username: username, imagePath: urlString, queuePosition: queuePosition)
         }
     }
     

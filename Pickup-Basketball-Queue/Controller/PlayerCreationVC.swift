@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PlayerCreationVC: UIViewController, UIImagePickerControllerDelegate,  UINavigationControllerDelegate{
     @IBOutlet weak var usernameTextField: UITextField!
@@ -17,13 +18,14 @@ class PlayerCreationVC: UIViewController, UIImagePickerControllerDelegate,  UINa
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        profilePicBtn.imageView?.layer.cornerRadius = 77
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
     }
     
     @IBAction func profilePicBtnPressed(_ sender: UIButton) {
         let imgPath = 
-        DataService.instance.savePlayer(username: usernameTextField.text, imagePath: <#T##String?#>, queuePosition: <#T##Int?#>)
+            DataService.instance.savePlayer(username: usernameTextField.text, imagePath: <#T##String?#>, queuePosition: <#T##Int?#>)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
