@@ -24,14 +24,23 @@ class PlayerCreationVC: UIViewController, UIImagePickerControllerDelegate,  UINa
     }
     
     @IBAction func profilePicBtnPressed(_ sender: UIButton) {
-        let imgPath = 
-            DataService.instance.savePlayer(username: usernameTextField.text, imagePath: <#T##String?#>, queuePosition: <#T##Int?#>)
+        sender.setTitle("", for: .normal)
+        present(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         imagePicker.dismiss(animated: true, completion: nil)
         profilePicBtn.imageView?.image = selectedImage
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }
