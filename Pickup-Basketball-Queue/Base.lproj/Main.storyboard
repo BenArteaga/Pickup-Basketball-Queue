@@ -363,7 +363,7 @@
         <!--PlayerDashboardView-->
         <scene sceneID="Dyz-hw-d5M">
             <objects>
-                <viewController id="W22-Zy-xSw" userLabel="PlayerDashboardView" sceneMemberID="viewController">
+                <viewController id="W22-Zy-xSw" userLabel="PlayerDashboardView" customClass="PlayerDashboardVC" customModule="Pickup_Basketball_Queue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kGC-VP-7ek">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -383,6 +383,7 @@
                                         </state>
                                         <connections>
                                             <action selector="LogOutBtnPressed:" destination="6fj-VG-58H" eventType="touchUpInside" id="Gq9-De-bRc"/>
+                                            <action selector="logOutBtnPressed:" destination="W22-Zy-xSw" eventType="touchUpInside" id="FwC-da-F1f"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -403,7 +404,7 @@
                                 <rect key="frame" x="0.0" y="78" width="414" height="655"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fO4-Xx-Bcx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fO4-Xx-Bcx" customClass="PlayerDashboardCell" customModule="Pickup_Basketball_Queue" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fO4-Xx-Bcx" id="dSF-YQ-FOQ">
@@ -423,6 +424,9 @@
                                 <state key="normal" title="Add Gym">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addGymBtnPressed:" destination="W22-Zy-xSw" eventType="touchUpInside" id="2FF-9k-F4s"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -445,10 +449,104 @@
                         <viewLayoutGuide key="safeArea" id="CcG-sD-h2P"/>
                     </view>
                     <navigationItem key="navigationItem" id="5eV-O8-PrO"/>
+                    <connections>
+                        <outlet property="addGymBtn" destination="cyS-pQ-13u" id="z3e-gJ-1fn"/>
+                        <outlet property="playerGymsTableView" destination="R5s-9z-5kx" id="myZ-25-YYY"/>
+                        <segue destination="BaI-sv-fHW" kind="show" identifier="PlayerDashboardtoCourtOptions" id="pYy-ic-ZFO"/>
+                        <segue destination="mSE-ts-1TF" kind="show" identifier="PlayerDashboardViewtoAddGymView" id="edJ-Zr-sSc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVc-Os-JXs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2024.6376811594205" y="838.39285714285711"/>
+        </scene>
+        <!--AddGymView-->
+        <scene sceneID="b3X-Gm-2oa">
+            <objects>
+                <viewController id="mSE-ts-1TF" userLabel="AddGymView" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fna-G5-fCL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efh-IC-y3g">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Gym" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwv-eU-MMG">
+                                        <rect key="frame" x="139" y="17" width="136" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATX-jm-KNB">
+                                        <rect key="frame" x="14" y="8" width="34" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="M5t-Ne-acC"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a gym to add to your Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZ3-SU-HSf">
+                                <rect key="frame" x="51" y="78" width="312" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ELm-CX-mbb"/>
+                                    <constraint firstAttribute="width" constant="312" id="e4Z-od-W6Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nda-I9-0AN">
+                                <rect key="frame" x="0.0" y="107" width="414" height="701"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Nda-I9-0AN" firstAttribute="top" secondItem="vZ3-SU-HSf" secondAttribute="bottom" constant="8" id="7lk-m0-c08"/>
+                            <constraint firstItem="vZ3-SU-HSf" firstAttribute="top" secondItem="efh-IC-y3g" secondAttribute="bottom" constant="8" id="VIy-BE-rwU"/>
+                            <constraint firstItem="efh-IC-y3g" firstAttribute="trailing" secondItem="Nda-I9-0AN" secondAttribute="trailing" id="f2E-iM-sTX"/>
+                            <constraint firstItem="efh-IC-y3g" firstAttribute="top" secondItem="tgf-iS-xyS" secondAttribute="top" id="gC9-sg-QPq"/>
+                            <constraint firstItem="efh-IC-y3g" firstAttribute="leading" secondItem="Nda-I9-0AN" secondAttribute="leading" id="gU4-fH-I9m"/>
+                            <constraint firstItem="Nda-I9-0AN" firstAttribute="bottom" secondItem="tgf-iS-xyS" secondAttribute="bottom" id="lAS-Xz-mb8"/>
+                            <constraint firstItem="efh-IC-y3g" firstAttribute="leading" secondItem="tgf-iS-xyS" secondAttribute="leading" id="ppl-M7-ZSB"/>
+                            <constraint firstItem="efh-IC-y3g" firstAttribute="centerX" secondItem="fna-G5-fCL" secondAttribute="centerX" id="pxm-5S-g02"/>
+                            <constraint firstItem="efh-IC-y3g" firstAttribute="centerX" secondItem="vZ3-SU-HSf" secondAttribute="centerX" id="uNQ-gR-0eg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tgf-iS-xyS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="b9A-ed-UbV"/>
+                    <connections>
+                        <segue destination="W22-Zy-xSw" kind="show" identifier="AddGymViewtoPlayerDashboardView" id="81X-qT-ytB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PeJ-NR-Ubj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3286.9565217391305" y="837.72321428571422"/>
+        </scene>
+        <!--CourtOptionsView-->
+        <scene sceneID="VeB-X2-1Sv">
+            <objects>
+                <viewController id="BaI-sv-fHW" userLabel="CourtOptionsView" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LGl-AC-v4D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="dpi-9J-ZwF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Aj5-u2-cSi"/>
+                    <connections>
+                        <segue destination="6fj-VG-58H" kind="show" identifier="CourtOptionsViewtoPlayerView" id="YCE-ld-Uph"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VEt-NH-kpn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2025" y="1545"/>
         </scene>
         <!--GymView-->
         <scene sceneID="k1o-D4-CTL">
@@ -663,11 +761,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opX-oa-9Sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810" y="1764"/>
+            <point key="canvasLocation" x="2025" y="2283"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="YCE-ld-Uph"/>
         <segue reference="PJf-R4-xES"/>
+        <segue reference="81X-qT-ytB"/>
         <segue reference="Cte-QW-Est"/>
     </inferredMetricsTieBreakers>
 </document>
