@@ -24,6 +24,8 @@
 		85A35D13249D2A7100831D8A /* GymVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D12249D2A7100831D8A /* GymVC.swift */; };
 		85A35D15249E98DA00831D8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85A35D14249E98DA00831D8A /* GoogleService-Info.plist */; };
 		85A35D1724A18EBB00831D8A /* QueueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D1624A18EBB00831D8A /* QueueCell.swift */; };
+		85A4220B24AC1FBC003EA077 /* PlayerDashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4220A24AC1FBC003EA077 /* PlayerDashboardCell.swift */; };
+		85A4220D24AC1FE8003EA077 /* PlayerDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4220C24AC1FE8003EA077 /* PlayerDashboardVC.swift */; };
 		85F013ED24A68E5000FA77E5 /* Gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F013EC24A68E5000FA77E5 /* Gym.swift */; };
 		C6D34D09E76782578A3EB5C3 /* Pods_Pickup_Basketball_QueueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC96F862DA60AEDC316B6591 /* Pods_Pickup_Basketball_QueueTests.framework */; };
 		DB6E691039C630D40055DDD0 /* Pods_Pickup_Basketball_Queue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA4CE4259B80438C1408454 /* Pods_Pickup_Basketball_Queue.framework */; };
@@ -64,6 +66,8 @@
 		85A35D12249D2A7100831D8A /* GymVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymVC.swift; sourceTree = "<group>"; };
 		85A35D14249E98DA00831D8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85A35D1624A18EBB00831D8A /* QueueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueCell.swift; sourceTree = "<group>"; };
+		85A4220A24AC1FBC003EA077 /* PlayerDashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDashboardCell.swift; sourceTree = "<group>"; };
+		85A4220C24AC1FE8003EA077 /* PlayerDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDashboardVC.swift; sourceTree = "<group>"; };
 		85F013EC24A68E5000FA77E5 /* Gym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gym.swift; sourceTree = "<group>"; };
 		9829A58B254CBF1767FB2169 /* Pods-Pickup-Basketball-QueueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pickup-Basketball-QueueTests.release.xcconfig"; path = "Target Support Files/Pods-Pickup-Basketball-QueueTests/Pods-Pickup-Basketball-QueueTests.release.xcconfig"; sourceTree = "<group>"; };
 		BCA4CE4259B80438C1408454 /* Pods_Pickup_Basketball_Queue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pickup_Basketball_Queue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				85A35D1624A18EBB00831D8A /* QueueCell.swift */,
+				85A4220A24AC1FBC003EA077 /* PlayerDashboardCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				85A35D12249D2A7100831D8A /* GymVC.swift */,
 				8526E9B724A3B0F300F9675B /* PlayerCreationVC.swift */,
 				8526E9B924A3B10300F9675B /* GymCreationVC.swift */,
+				85A4220C24AC1FE8003EA077 /* PlayerDashboardVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -370,11 +376,13 @@
 				850D1933249BD69B00A08DE2 /* Player.swift in Sources */,
 				850D190B249AAA6200A08DE2 /* AppDelegate.swift in Sources */,
 				85F013ED24A68E5000FA77E5 /* Gym.swift in Sources */,
+				85A4220B24AC1FBC003EA077 /* PlayerDashboardCell.swift in Sources */,
 				850D190D249AAA6200A08DE2 /* SceneDelegate.swift in Sources */,
 				85A35D11249D2A5E00831D8A /* PlayerVC.swift in Sources */,
 				850D1937249D1B8600A08DE2 /* AuthService.swift in Sources */,
 				85A35D13249D2A7100831D8A /* GymVC.swift in Sources */,
 				850D1931249AADFA00A08DE2 /* SignInVC.swift in Sources */,
+				85A4220D24AC1FE8003EA077 /* PlayerDashboardVC.swift in Sources */,
 				8526E9B824A3B0F300F9675B /* PlayerCreationVC.swift in Sources */,
 				8526E9BA24A3B10300F9675B /* GymCreationVC.swift in Sources */,
 				85A35D1724A18EBB00831D8A /* QueueCell.swift in Sources */,
