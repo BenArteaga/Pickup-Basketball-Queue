@@ -16,6 +16,8 @@
 		850D1931249AADFA00A08DE2 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D1930249AADFA00A08DE2 /* SignInVC.swift */; };
 		850D1933249BD69B00A08DE2 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D1932249BD69B00A08DE2 /* Player.swift */; };
 		850D1937249D1B8600A08DE2 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D1936249D1B8600A08DE2 /* AuthService.swift */; };
+		8517850A24AC2A6C0033D985 /* AddGymVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517850924AC2A6C0033D985 /* AddGymVC.swift */; };
+		8517850C24AC2A8D0033D985 /* CourtOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8517850B24AC2A8D0033D985 /* CourtOptionsVC.swift */; };
 		8526E9B624A195D800F9675B /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526E9B524A195D800F9675B /* DataService.swift */; };
 		8526E9B824A3B0F300F9675B /* PlayerCreationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526E9B724A3B0F300F9675B /* PlayerCreationVC.swift */; };
 		8526E9BA24A3B10300F9675B /* GymCreationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526E9B924A3B10300F9675B /* GymCreationVC.swift */; };
@@ -58,6 +60,8 @@
 		850D1930249AADFA00A08DE2 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		850D1932249BD69B00A08DE2 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		850D1936249D1B8600A08DE2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		8517850924AC2A6C0033D985 /* AddGymVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGymVC.swift; sourceTree = "<group>"; };
+		8517850B24AC2A8D0033D985 /* CourtOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtOptionsVC.swift; sourceTree = "<group>"; };
 		8526E9B524A195D800F9675B /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8526E9B724A3B0F300F9675B /* PlayerCreationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationVC.swift; sourceTree = "<group>"; };
 		8526E9B924A3B10300F9675B /* GymCreationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymCreationVC.swift; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 				8526E9B724A3B0F300F9675B /* PlayerCreationVC.swift */,
 				8526E9B924A3B10300F9675B /* GymCreationVC.swift */,
 				85A4220C24AC1FE8003EA077 /* PlayerDashboardVC.swift */,
+				8517850924AC2A6C0033D985 /* AddGymVC.swift */,
+				8517850B24AC2A8D0033D985 /* CourtOptionsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -379,10 +385,12 @@
 				85A4220B24AC1FBC003EA077 /* PlayerDashboardCell.swift in Sources */,
 				850D190D249AAA6200A08DE2 /* SceneDelegate.swift in Sources */,
 				85A35D11249D2A5E00831D8A /* PlayerVC.swift in Sources */,
+				8517850A24AC2A6C0033D985 /* AddGymVC.swift in Sources */,
 				850D1937249D1B8600A08DE2 /* AuthService.swift in Sources */,
 				85A35D13249D2A7100831D8A /* GymVC.swift in Sources */,
 				850D1931249AADFA00A08DE2 /* SignInVC.swift in Sources */,
 				85A4220D24AC1FE8003EA077 /* PlayerDashboardVC.swift in Sources */,
+				8517850C24AC2A8D0033D985 /* CourtOptionsVC.swift in Sources */,
 				8526E9B824A3B0F300F9675B /* PlayerCreationVC.swift in Sources */,
 				8526E9BA24A3B10300F9675B /* GymCreationVC.swift in Sources */,
 				85A35D1724A18EBB00831D8A /* QueueCell.swift in Sources */,
