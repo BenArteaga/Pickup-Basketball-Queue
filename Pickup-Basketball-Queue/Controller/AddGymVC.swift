@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
-class AddGymVC: UIViewController {
+class AddGymVC: UIViewController, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 
 }

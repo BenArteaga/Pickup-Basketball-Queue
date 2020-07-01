@@ -8,11 +8,15 @@
 
 import UIKit
 
-class CourtOptionsVC: UIViewController {
+class CourtOptionsVC: UIViewController, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 
 }

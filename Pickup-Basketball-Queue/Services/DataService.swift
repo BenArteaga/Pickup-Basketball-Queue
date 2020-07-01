@@ -51,27 +51,15 @@ class DataService {
         gymRef.updateChildValues(gym)
     }
     
-//    func imageForPath(_ path: String) -> UIImage? {
-//        let fullPath = documentsPathForFileName(path)
-//        let image = UIImage(named: fullPath)
-//        return image
-//    }
-//
-//    func documentsPathForFileName(_ name: String) -> String {
-//        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-//        let fullPath = paths[0] as NSString
-//        return fullPath.appendingPathComponent(name)
-//    }
-//
-//    func saveImageAndCreatePath(_ image: UIImage) -> String {
-//        //turns image into data
-//        let imgData = image.pngData()
-//        //makes sure that each time we save an image it will have a unique path name
-//        let imgPath = "image\(Date.timeIntervalSinceReferenceDate).png"
-//        let fullPath = documentsPathForFileName(imgPath)
-//        //writes fullPath to disc
-//        try? imgData?.write(to: URL(fileURLWithPath: fullPath), options: [.atomic])
-//        //not sure why we are returning imgPath?
-//        return imgPath
-//    }
+    //updates the following and followers root nodes of the database when a player wants to add a gym to their dashboard
+    func followGym(user: User) {
+        let currentUID = Auth.auth().currentUser!.uid
+        //"followers" is a root node where the children are gyms and the next children are players who follow that gym
+        //"following" is a root node where the children are players and the next children are all the gyms that the player follows
+        let followData = ["followers/\(user.uid)/\(currentUID)": true, "following/\(currentUID)/\(user.uid)": true]
+        let ref = Database.database().reference()
+        ref.updateChildValues(followData)
+    }
+    
+
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class PlayerDashboardVC: UIViewController, UITableViewDelegate {
+class PlayerDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var addGymBtn: UIButton!
     
@@ -18,6 +18,9 @@ class PlayerDashboardVC: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        playerGymsTableView.delegate = self
+        playerGymsTableView.dataSource = self
 
         addGymBtn.layer.cornerRadius = 10
     }
