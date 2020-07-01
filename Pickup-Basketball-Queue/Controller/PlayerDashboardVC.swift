@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class PlayerDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PlayerDashboardVC: UIViewController {
 
     @IBOutlet weak var addGymBtn: UIButton!
     
@@ -23,10 +23,6 @@ class PlayerDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
         playerGymsTableView.dataSource = self
 
         addGymBtn.layer.cornerRadius = 10
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
     }
     
     @IBAction func addGymBtnPressed(_ sender: UIButton) {
@@ -43,4 +39,23 @@ class PlayerDashboardVC: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
     
+}
+
+extension PlayerDashboardVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return GymCell()
+    }
 }
