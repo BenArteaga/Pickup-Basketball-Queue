@@ -9,6 +9,7 @@
 import Foundation
 
 class Player {
+    fileprivate var _playerID: String?
     fileprivate var _queuePosition: Int?
     fileprivate var _imagePath: String
     fileprivate var _playerName: String?
@@ -25,15 +26,21 @@ class Player {
         return _playerName
     }
     
+    var playerID: String? {
+        return _playerID
+    }
+    
     //regular initializer
-    init(in_queuePosition: Int?, in_imagePath: String, in_playerName: String?) {
+    init(in_playerID: String?, in_queuePosition: Int?, in_imagePath: String, in_playerName: String?) {
+        _playerID = in_playerID
         _queuePosition = in_queuePosition
         _imagePath = in_imagePath
         _playerName = in_playerName
     }
     
     //initializes instance of a player by using firebase data in the form of a dictionary
-    init(playerData: Dictionary<String, AnyObject>) {
+    init(in_playerID: String?, playerData: Dictionary<String, AnyObject>) {
+        _playerID = in_playerID
         _queuePosition = playerData["position"] as? Int
         _imagePath = playerData["image"] as! String
         _playerName = playerData["player"] as? String

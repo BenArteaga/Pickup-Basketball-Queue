@@ -62,15 +62,15 @@ class DataService {
     }
     
     //function to check if a user follows a gym which will be used when we display gyms for the user to add
-    func isFollowingGym(user: User, byCurrentUserWithCompletion completion: @escaping (Bool) -> Void) {
+    func isFollowingGym(gymKey: String) -> Bool {
         let currentUID = Auth.auth().currentUser!.uid
         let ref = Database.database().reference().child("following").child(currentUID)
-        ref.queryEqual(toValue: nil, childKey: user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            if let _ = snapshot.value as? [String : Bool] {
-                completion(true)
-            } else {
-                completion(false)
+        var isFollowing = false
+        ref.child(gymKey).observe(.value) { (data: Firebase.DataSnapshot) in
+            if data.value != nil {
+                isFollowing = true
             }
-        })
+        }
+        return isFollowing
     }
 }
