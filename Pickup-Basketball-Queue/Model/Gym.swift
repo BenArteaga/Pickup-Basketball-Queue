@@ -48,11 +48,14 @@ class Gym {
     static func gymArrayFromFBData(fbData: AnyObject) -> [Gym] {
         var gyms = [Gym]()
         if let formattedData = fbData as? Dictionary<String, AnyObject> {
-            for (key, gymData) in formattedData {
-                let gymDict = gymData as! Dictionary<String, AnyObject>
-                let gym = Gym(in_gymID: key, gymData: gymDict)
-                if !DataService.instance.isFollowingGym(gymKey: key) {
-                    gyms.append(gym)
+            for (key, nextKey) in formattedData {
+                if let gymData = formattedData[key] as? Dictionary<String, AnyObject> {
+                    for(key2, gymInfo) in gymData {
+                        let gym = Gym(in_gymID: key2, gymData: gymInfo as! Dictionary<String, AnyObject>)
+                        if !DataService.instance.isFollowingGym(gymKey: key2) {
+                            gyms.append(gym)
+                        }
+                    }
                 }
             }
         }

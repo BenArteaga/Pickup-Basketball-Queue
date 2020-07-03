@@ -53,11 +53,11 @@ class DataService {
     }
     
     //updates the following and followers root nodes of the database when a player wants to add a gym to their dashboard
-    func followGym(user: User) {
+    func followGym(gym: Gym) {
         let currentUID = Auth.auth().currentUser!.uid
         //"followers" is a root node where the children are gyms and the next children are players who follow that gym
         //"following" is a root node where the children are players and the next children are all the gyms that the player follows
-        let followData = ["followers/\(user.uid)/\(currentUID)": true, "following/\(currentUID)/\(user.uid)": true]
+        let followData = ["followers/\(gym.gymID)/\(currentUID)": true, "following/\(currentUID)/\(gym.gymID)": true]
         let ref = Database.database().reference()
         ref.updateChildValues(followData)
     }

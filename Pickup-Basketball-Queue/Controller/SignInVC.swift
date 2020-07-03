@@ -30,7 +30,7 @@ class SignInVC: UIViewController {
                 performSegue(withIdentifier: "SignInViewtoGymView", sender: nil)
             }
             else {
-                performSegue(withIdentifier: "SignInViewtoPlayerView", sender: nil)
+                performSegue(withIdentifier: "SignInViewtoPlayerDashboardView", sender: nil)
             }
         }
      }
@@ -65,7 +65,7 @@ class SignInVC: UIViewController {
                     if(AuthService.instance.isGym == true) {
                         self.showAlert(title: "Error", message: "It appears you already have a gym account and you cannot create both a gym and player account under the same credentials")
                     }
-                    self.performSegue(withIdentifier: "SignInViewtoPlayerView", sender: nil)
+                    self.performSegue(withIdentifier: "SignInViewtoPlayerDashboardView", sender: nil)
                 }
             }
             else {

@@ -11,11 +11,21 @@ import Firebase
 
 class AddGymVC: UIViewController {
 
-    @IBOutlet weak var gymsTableView: UITableView!
+    @IBOutlet var gymsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DataService.instance.delegate = self
+        
+        gymsTableView.delegate = self
+        gymsTableView.dataSource = self
+        
+        gymsTableView.reloadData()
 
+    }
+    
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "AddGymViewtoPlayerDashboardView", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -27,8 +37,13 @@ class AddGymVC: UIViewController {
 extension AddGymVC: DataServiceDelegate {
     func dataLoaded() {
         gymsTableView.reloadData()
+        if DataService.instance.gymsToAdd.count > 0 {
+            let indexPath = IndexPath(row: DataService.instance.gymsToAdd.count - 1, section: 0)
+            gymsTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
     }
 }
+
 extension AddGymVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
