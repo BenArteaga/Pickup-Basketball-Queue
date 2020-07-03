@@ -9,8 +9,10 @@
 import UIKit
 import Firebase
 
-class AddGymVC: UIViewController, UITableViewDelegate {
+class AddGymVC: UIViewController {
 
+    @IBOutlet weak var gymsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,4 +23,20 @@ class AddGymVC: UIViewController, UITableViewDelegate {
         return 70
     }
 
+}
+
+extension AddGymVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return gyms.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return GymCell()
+    }
+    
+    
 }

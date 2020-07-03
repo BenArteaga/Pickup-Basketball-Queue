@@ -26,14 +26,14 @@ class PlayerDashboardVC: UIViewController {
     }
     
     @IBAction func addGymBtnPressed(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "PlayerDashboardViewtoAddGymView", sender: nil)
     }
     
     @IBAction func logOutBtnPressed(_ sender: UIButton) {
         do {
             try Firebase.Auth.auth().signOut()
             AuthService.instance.isLoggedIn = false
-            performSegue(withIdentifier: "PlayerViewtoSignInView", sender: nil)
+            performSegue(withIdentifier: "PlayerDashboardViewtoSignInView", sender: nil)
         } catch {
             print("An error occured signing out")
         }

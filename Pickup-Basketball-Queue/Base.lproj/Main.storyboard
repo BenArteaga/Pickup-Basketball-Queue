@@ -454,6 +454,7 @@
                         <outlet property="playerGymsTableView" destination="R5s-9z-5kx" id="myZ-25-YYY"/>
                         <segue destination="BaI-sv-fHW" kind="show" identifier="PlayerDashboardtoCourtOptions" id="pYy-ic-ZFO"/>
                         <segue destination="mSE-ts-1TF" kind="show" identifier="PlayerDashboardViewtoAddGymView" id="edJ-Zr-sSc"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="PlayerDashboardViewtoSignInView" id="iu3-ds-6Br"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVc-Os-JXs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -532,6 +533,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="b9A-ed-UbV"/>
                     <connections>
+                        <outlet property="gymsTableView" destination="Nda-I9-0AN" id="KLP-Ng-nr3"/>
                         <segue destination="W22-Zy-xSw" kind="show" identifier="AddGymViewtoPlayerDashboardView" id="81X-qT-ytB"/>
                     </connections>
                 </viewController>
@@ -832,7 +834,7 @@
         <segue reference="YCE-ld-Uph"/>
         <segue reference="PJf-R4-xES"/>
         <segue reference="pYy-ic-ZFO"/>
-        <segue reference="iSk-Lh-XES"/>
-        <segue reference="Cte-QW-Est"/>
+        <segue reference="81X-qT-ytB"/>
+        <segue reference="iu3-ds-6Br"/>
     </inferredMetricsTieBreakers>
 </document>

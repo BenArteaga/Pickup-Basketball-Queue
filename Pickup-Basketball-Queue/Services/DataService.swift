@@ -18,7 +18,8 @@ protocol DataServiceDelegate: class {
 
 class DataService {
     static let instance = DataService()
-    var players: [Player] = []
+    //array to be filled with all of the possible gyms that a player could start following
+    var gymsToAdd: [Gym] = []
     weak var delegate: DataServiceDelegate?
     
     //saves player to FirebaseDatabase in the form of a dictionary
@@ -72,5 +73,26 @@ class DataService {
             }
         }
         return isFollowing
+    }
+    
+    //loads messages from Firebase and stores the in messages array
+    func loadGymsToAdd(_ completion: @escaping (_ Success: Bool) -> Void) {
+        //observes the value of that Firebase location
+        let ref = Database.database().reference().child("gyms")
+        ref.observe(.value) { (data: Firebase.DataSnapshot) in
+            if data.value != nil {
+                self.gymsToAdd = Gym.gymArrayFromFBData(fbData: data.value! as AnyObject)
+                self.delegate?.dataLoaded()
+                if self.gymsToAdd.count > 0 {
+                    completion(true)
+                }
+                else {
+                    completion(false)
+                }
+            }
+            else {
+                completion(false)
+            }
+        }
     }
 }
