@@ -16,7 +16,6 @@ class AddGymVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -25,17 +24,29 @@ class AddGymVC: UIViewController {
 
 }
 
+extension AddGymVC: DataServiceDelegate {
+    func dataLoaded() {
+        gymsTableView.reloadData()
+    }
+}
 extension AddGymVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gyms.count
+        return DataService.instance.gymsToAdd.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return GymCell()
+        let gym = DataService.instance.gymsToAdd[(indexPath as NSIndexPath).row]
+        if let cell = gymsTableView.dequeueReusableCell(withIdentifier: "GymCell") as? GymCell {
+            cell.configureGymCell(in_gym: gym)
+            return cell
+        }
+        else {
+            return GymCell()
+        }
     }
     
     

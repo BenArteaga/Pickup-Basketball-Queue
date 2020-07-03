@@ -353,7 +353,7 @@
                         <outlet property="profilePicBtn" destination="63W-gy-3U7" id="Zj0-10-Ju8"/>
                         <outlet property="profilePicImage" destination="ryK-di-9zo" id="wwL-Ii-V7C"/>
                         <outlet property="usernameTextField" destination="PXu-V8-ags" id="se9-mC-SRH"/>
-                        <segue destination="W22-Zy-xSw" kind="show" identifier="PlayerCreationViewtoPlayerDashboard" id="xOk-d2-t9l"/>
+                        <segue destination="W22-Zy-xSw" kind="show" identifier="PlayerCreationViewtoPlayerDashboardView" id="xOk-d2-t9l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVC-G6-gUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -512,7 +512,19 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dd7-Ks-Lle" id="kee-jY-WCE">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utK-1n-tSW">
+                                                    <rect key="frame" x="20" y="18" width="365" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="gymNameLabel" destination="utK-1n-tSW" id="E1B-C2-Gkd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -834,7 +846,7 @@
         <segue reference="YCE-ld-Uph"/>
         <segue reference="PJf-R4-xES"/>
         <segue reference="pYy-ic-ZFO"/>
-        <segue reference="81X-qT-ytB"/>
+        <segue reference="xOk-d2-t9l"/>
         <segue reference="iu3-ds-6Br"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -36,7 +36,7 @@ class PlayerCreationVC: UIViewController, UIImagePickerControllerDelegate,  UINa
     @IBAction func doneBtnPressed(_ sender: UIButton) {
         if let playerUsername = usernameTextField.text, let profilePic = profilePicImage.image {
             DataService.instance.savePlayerWithImage(username: playerUsername, image: profilePic, queuePosition: -1)
-            self.performSegue(withIdentifier: "PlayerCreationViewtoPlayerView", sender: nil)
+            self.performSegue(withIdentifier: "PlayerCreationViewtoPlayerDashboardView", sender: nil)
         }
         else {
             showAlert(title: "Error", message: "Please make sure you have entered a username and selected a profile image")
