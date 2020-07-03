@@ -8,8 +8,11 @@
 
 import UIKit
 
+
 class PlayerDashboardCell: UITableViewCell {
 
+    @IBOutlet weak var gymNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +22,10 @@ class PlayerDashboardCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureGymCell(in_gym: Gym) {
+        gymNameLabel.text = in_gym.gymName
     }
 
 }

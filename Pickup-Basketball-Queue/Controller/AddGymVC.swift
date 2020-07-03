@@ -64,5 +64,11 @@ extension AddGymVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let gym = DataService.instance.gymsToAdd[indexPath.row]
+        DataService.instance.followGym(in_gym: gym)
+        performSegue(withIdentifier: "AddGymViewtoPlayerDashboardView", sender: nil)
+    }
+    
     
 }

@@ -20,6 +20,8 @@ class DataService {
     static let instance = DataService()
     //array to be filled with all of the possible gyms that a player could start following
     var gymsToAdd: [Gym] = []
+    //array to be filled with the gyms that the player is currently following
+    var gymsFollowing: [Gym] = []
     weak var delegate: DataServiceDelegate?
     
     //saves player to FirebaseDatabase in the form of a dictionary
@@ -27,7 +29,7 @@ class DataService {
         let userID = Auth.auth().currentUser!.uid
         //it should be okay to force unwrap because this function should never be called with empty values
         let player = ["player": username!, "image": imagePath!, "position": queuePosition!] as [String : Any]
-        let playerRef = Database.database().reference().child("players").child(userID).childByAutoId()
+        let playerRef = Database.database().reference().child("players").child(userID)
         playerRef.updateChildValues(player)
     }
     
@@ -48,18 +50,38 @@ class DataService {
     func saveGym(gymName: String?, numOfCourts: Int?) {
         let userID = Auth.auth().currentUser!.uid
         let gym = ["gym": gymName!, "courtCount": numOfCourts!] as [String : Any]
-        let gymRef = Database.database().reference().child("gyms").child(userID).childByAutoId()
+        let gymRef = Database.database().reference().child("gyms").child(userID)
         gymRef.updateChildValues(gym)
     }
     
     //updates the following and followers root nodes of the database when a player wants to add a gym to their dashboard
-    func followGym(gym: Gym) {
+    func followGym(in_gym: Gym) {
         let currentUID = Auth.auth().currentUser!.uid
         //"followers" is a root node where the children are gyms and the next children are players who follow that gym
         //"following" is a root node where the children are players and the next children are all the gyms that the player follows
-        let followData = ["followers/\(gym.gymID)/\(currentUID)": true, "following/\(currentUID)/\(gym.gymID)": true]
+        let followData = ["followers/\(String(describing: in_gym.gymID))/\(currentUID)": true, "following/\(currentUID)/\(String(describing: in_gym.gymID))": true]
         let ref = Database.database().reference()
         ref.updateChildValues(followData)
+    }
+    
+    //loads gyms that playing is following and stores them in an array
+    func loadGymsFollowing(_ completion: @escaping (_ Success: Bool) -> Void) {
+        let ref = Database.database().reference().child("following").child(Auth.auth().currentUser!.uid)
+        ref.observe(.value) { (data: Firebase.DataSnapshot) in
+            if data.value != nil {
+                self.gymsToAdd = Gym.gymArrayFromFBData(fbData: data.value! as AnyObject)
+                self.delegate?.dataLoaded()
+                if self.gymsToAdd.count > 0 {
+                    completion(true)
+                }
+                else {
+                    completion(false)
+                }
+            }
+            else {
+                completion(false)
+            }
+        }
     }
     
     //function to check if a user follows a gym which will be used when we display gyms for the user to add

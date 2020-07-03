@@ -48,19 +48,27 @@ class Gym {
     static func gymArrayFromFBData(fbData: AnyObject) -> [Gym] {
         var gyms = [Gym]()
         if let formattedData = fbData as? Dictionary<String, AnyObject> {
-            for (key, nextKey) in formattedData {
-                if let gymData = formattedData[key] as? Dictionary<String, AnyObject> {
-                    for(key2, gymInfo) in gymData {
-                        let gym = Gym(in_gymID: key2, gymData: gymInfo as! Dictionary<String, AnyObject>)
-                        if !DataService.instance.isFollowingGym(gymKey: key2) {
-                            gyms.append(gym)
-                        }
-                    }
+            for (key, gymInfo) in formattedData {
+                    let gym = Gym(in_gymID: key, gymData: gymInfo as! Dictionary<String, AnyObject>)
+                    if !DataService.instance.isFollowingGym(gymKey: key) {
+                        gyms.append(gym)
                 }
+                    
             }
         }
         return gyms
     }
+    
+    
+    //creates array of gyms that the player is currently following from FB data to be displayed on the Player Dashboard
+//    static func getGymsFollowing(fbData: AnyObject) -> [Gym] {
+//        var gyms = [Gym]()
+//        if let formattedData = fbData as? Dictionary<String, AnyObject> {
+//            for (key, value) in formattedData {
+//                let ref = Database.database().reference().child("gyms").child(<#T##pathString: String##String#>)
+//            }
+//        }
+//    }
     
     
 }
