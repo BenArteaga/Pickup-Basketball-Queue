@@ -66,6 +66,7 @@ class DataService {
     
     //loads gyms that playing is following and stores them in an array
     func loadGymsFollowing(_ completion: @escaping ([Gym]) -> Void) {
+        gymsFollowing.removeAll()
         let ref = Database.database().reference().child("following").child(Auth.auth().currentUser!.uid)
         
         ref.observeSingleEvent(of: .value, with: { data in
