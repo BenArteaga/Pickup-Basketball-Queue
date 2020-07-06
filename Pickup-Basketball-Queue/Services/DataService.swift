@@ -59,29 +59,36 @@ class DataService {
         let currentUID = Auth.auth().currentUser!.uid
         //"followers" is a root node where the children are gyms and the next children are players who follow that gym
         //"following" is a root node where the children are players and the next children are all the gyms that the player follows
-        let followData = ["followers/\(String(describing: in_gym.gymID))/\(currentUID)": true, "following/\(currentUID)/\(String(describing: in_gym.gymID))": true]
+        let followData = ["followers/\(in_gym.gymID ?? "")/\(currentUID)": true, "following/\(currentUID)/\(in_gym.gymID ?? "")": true]
         let ref = Database.database().reference()
         ref.updateChildValues(followData)
     }
     
     //loads gyms that playing is following and stores them in an array
-    func loadGymsFollowing(_ completion: @escaping (_ Success: Bool) -> Void) {
+    func loadGymsFollowing(_ completion: @escaping ([Gym]) -> Void) {
         let ref = Database.database().reference().child("following").child(Auth.auth().currentUser!.uid)
-        ref.observe(.value) { (data: Firebase.DataSnapshot) in
-            if data.value != nil {
-                self.gymsToAdd = Gym.gymArrayFromFBData(fbData: data.value! as AnyObject)
-                self.delegate?.dataLoaded()
-                if self.gymsToAdd.count > 0 {
-                    completion(true)
-                }
-                else {
-                    completion(false)
+        
+        ref.observeSingleEvent(of: .value, with: { data in
+            guard let allGyms = data.children.allObjects as? [DataSnapshot] else {
+                return completion([])
+            }
+            
+            let dispatchGroup = DispatchGroup()
+            
+            for gymData in allGyms {
+                dispatchGroup.enter()
+                self.getGymForGymID(in_gymID: gymData.key) { (gym) in
+                    if let newGym = gym {
+                        self.gymsFollowing.append(newGym)
+                    }
+                    dispatchGroup.leave()
                 }
             }
-            else {
-                completion(false)
-            }
-        }
+            
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(self.gymsFollowing)
+            })
+        })
     }
     
     //function to check if a user follows a gym which will be used when we display gyms for the user to add
@@ -116,5 +123,16 @@ class DataService {
                 completion(false)
             }
         }
+    }
+    
+    //function to fetch a gym object using a gymID
+    func getGymForGymID(in_gymID: String, completion: @ escaping (Gym?) -> Void) {
+        let ref = Database.database().reference().child("gyms").child(in_gymID)
+        
+        ref.observeSingleEvent(of: .value, with: { (data) in
+            let gym = Gym(in_gymID: in_gymID, gymData: data.value as! Dictionary<String, AnyObject>)
+            completion(gym)
+        })
+        
     }
 }

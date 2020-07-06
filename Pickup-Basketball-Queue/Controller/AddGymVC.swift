@@ -37,10 +37,6 @@ class AddGymVC: UIViewController {
 extension AddGymVC: DataServiceDelegate {
     func dataLoaded() {
         gymsTableView.reloadData()
-        if DataService.instance.gymsToAdd.count > 0 {
-            let indexPath = IndexPath(row: DataService.instance.gymsToAdd.count - 1, section: 0)
-            gymsTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-        }
     }
 }
 

@@ -14,15 +14,20 @@ class PlayerDashboardVC: UIViewController {
     @IBOutlet weak var addGymBtn: UIButton!
     
     //View of all the gyms that the player has added to their dashboard
-    @IBOutlet weak var playerGymsTableView: UITableView!
+    @IBOutlet var playerGymsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DataService.instance.delegate = self
         
         playerGymsTableView.delegate = self
         playerGymsTableView.dataSource = self
 
         addGymBtn.layer.cornerRadius = 10
+        
+        DataService.instance.loadGymsFollowing { (gyms) in
+            self.playerGymsTableView.reloadData()
+        }
     }
     
     @IBAction func addGymBtnPressed(_ sender: UIButton) {
@@ -41,6 +46,12 @@ class PlayerDashboardVC: UIViewController {
     
 }
 
+extension PlayerDashboardVC: DataServiceDelegate {
+    func dataLoaded() {
+        playerGymsTableView.reloadData()
+    }
+}
+
 extension PlayerDashboardVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -52,10 +63,17 @@ extension PlayerDashboardVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return DataService.instance.gymsFollowing.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return GymCell()
+                let gym = DataService.instance.gymsFollowing[(indexPath as NSIndexPath).row]
+        if let cell = playerGymsTableView.dequeueReusableCell(withIdentifier: "PlayerDashboardCell") as? PlayerDashboardCell {
+            cell.configureGymCell(in_gym: gym)
+            return cell
+        }
+        else {
+            return GymCell()
+        }
     }
 }
