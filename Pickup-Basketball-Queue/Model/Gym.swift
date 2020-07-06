@@ -45,40 +45,17 @@ class Gym {
     }
     
     //creates array of gyms from FB data to display on the addGym page
-    static func gymArrayFromFBData(fbData: AnyObject) -> [Gym] {
-        var gyms = [Gym]()
-        if let formattedData = fbData as? Dictionary<String, AnyObject> {
-            for (key, gymInfo) in formattedData {
-                    let gym = Gym(in_gymID: key, gymData: gymInfo as! Dictionary<String, AnyObject>)
-                    if !DataService.instance.isFollowingGym(gymKey: key) {
-                        gyms.append(gym)
-                }
-                    
-            }
-        }
-        return gyms
-    }
-    
-    
-    //creates array of gyms that the player is currently following from FB data to be displayed on the Player Dashboard
-    static func getGymsFollowing(fbData: AnyObject) -> [Gym] {
-        var gyms = [Gym]()
-        if let formattedData = fbData as? Dictionary<String, AnyObject> {
-            for (key, value) in formattedData {
-                let ref = Database.database().reference().child("gyms")
-                ref.observeSingleEvent(of: .value, with: { data in
-                    if data.value != nil {
-                        if let gymData = data.value as? AnyObject {
-                            if let gymDict = gymData as? Dictionary<String, AnyObject> {
-                                let gym = Gym(in_gymID: key, gymData: gymDict[key] as! Dictionary<String, AnyObject>)
-                                gyms.append(gym)
-                            }
-                        }
-                    }
-                })
-            }
-        }
-        return gyms
-    }
+//    static func gymArrayFromFBData(fbData: AnyObject) -> [Gym] {
+//        var gyms = [Gym]()
+//        if let formattedData = fbData as? Dictionary<String, AnyObject> {
+//            for (key, gymInfo) in formattedData {
+//                let gym = Gym(in_gymID: key, gymData: gymInfo as! Dictionary<String, AnyObject>)
+//                if !DataService.instance.isFollowingGym(gymKey: key) {
+//                    gyms.append(gym)
+//                }
+//            }
+//        }
+//        return gyms
+//    }
     
 }

@@ -16,15 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        DataService.instance.loadGymsToAdd({Success in
-            if !Success {
-                print("Load Firebase data failed")
-            }
-            else {
-                print("Success!")
-            }
-        })
-        
         return true
     }
 

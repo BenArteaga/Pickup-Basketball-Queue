@@ -20,7 +20,12 @@ class AddGymVC: UIViewController {
         gymsTableView.delegate = self
         gymsTableView.dataSource = self
         
-        gymsTableView.reloadData()
+        DataService.instance.loadGymsToAdd2 { (gyms) in
+            
+            DispatchQueue.main.async {
+                self.gymsTableView.reloadData()
+            }
+        }
 
     }
     
