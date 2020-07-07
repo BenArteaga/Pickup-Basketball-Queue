@@ -246,14 +246,26 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHV-U1-pSd">
+                                        <rect key="frame" x="14" y="10" width="42" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelBtnPressed:" destination="Kck-QE-mof" eventType="touchUpInside" id="cMH-hL-AoF"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="SHV-U1-pSd" firstAttribute="leading" secondItem="VHv-Fk-iLw" secondAttribute="leading" constant="14" id="ErF-eX-Nur"/>
                                     <constraint firstItem="JPR-58-0qt" firstAttribute="top" secondItem="VHv-Fk-iLw" secondAttribute="top" constant="14" id="Osq-7F-vKz"/>
                                     <constraint firstItem="JPR-58-0qt" firstAttribute="centerX" secondItem="VHv-Fk-iLw" secondAttribute="centerX" id="TpP-2b-nEt"/>
                                     <constraint firstItem="JPR-58-0qt" firstAttribute="leading" secondItem="VHv-Fk-iLw" secondAttribute="leading" constant="65" id="YnS-7t-nFp"/>
                                     <constraint firstAttribute="height" constant="70" id="cyj-iG-B0u"/>
                                     <constraint firstItem="JPR-58-0qt" firstAttribute="centerY" secondItem="VHv-Fk-iLw" secondAttribute="centerY" id="fIq-Ig-hQ9"/>
+                                    <constraint firstItem="SHV-U1-pSd" firstAttribute="top" secondItem="VHv-Fk-iLw" secondAttribute="top" constant="10" id="iUk-dF-PS0"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PXu-V8-ags">
@@ -357,6 +369,7 @@
                         <outlet property="profilePicImage" destination="ryK-di-9zo" id="wwL-Ii-V7C"/>
                         <outlet property="usernameTextField" destination="PXu-V8-ags" id="se9-mC-SRH"/>
                         <segue destination="W22-Zy-xSw" kind="show" identifier="PlayerCreationViewtoPlayerDashboardView" id="xOk-d2-t9l"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="PlayerCreationViewtoSignInView" id="qlx-2f-arv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVC-G6-gUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -865,6 +878,6 @@
         <segue reference="eug-70-fEw"/>
         <segue reference="pYy-ic-ZFO"/>
         <segue reference="xOk-d2-t9l"/>
-        <segue reference="iu3-ds-6Br"/>
+        <segue reference="qlx-2f-arv"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -49,4 +49,18 @@ class AuthService {
             }
         })
     }
+    
+    //function to delete the current user
+    func deleteCurrentUser() {
+        let user = Auth.auth().currentUser
+        
+        user?.delete { error in
+            if let error = error {
+                print("user could not be deleted")
+            }
+            else {
+                print("user deleted")
+            }
+        }
+    }
 }

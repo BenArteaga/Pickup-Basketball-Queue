@@ -68,4 +68,13 @@ class PlayerCreationVC: UIViewController, UIImagePickerControllerDelegate,  UINa
         self.present(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func cancelBtnPressed(_ sender: UIButton) {
+        AuthService.instance.deleteCurrentUser()
+        do {
+            try Firebase.Auth.auth().signOut()
+        } catch {
+            print("An error occured signing out")
+        }
+        performSegue(withIdentifier: "PlayerCreationViewtoSignInView", sender: nil)
+    }
 }
