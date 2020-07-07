@@ -25,6 +25,7 @@
 		8526E9B824A3B0F300F9675B /* PlayerCreationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526E9B724A3B0F300F9675B /* PlayerCreationVC.swift */; };
 		8526E9BA24A3B10300F9675B /* GymCreationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526E9B924A3B10300F9675B /* GymCreationVC.swift */; };
 		8579678224A592B300CF7239 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8579678124A592B300CF7239 /* StorageService.swift */; };
+		85923B8D24B4D88A00A2C7A9 /* GymDashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85923B8C24B4D88A00A2C7A9 /* GymDashboardCell.swift */; };
 		85A35D11249D2A5E00831D8A /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D10249D2A5E00831D8A /* PlayerVC.swift */; };
 		85A35D13249D2A7100831D8A /* GymVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D12249D2A7100831D8A /* GymVC.swift */; };
 		85A35D15249E98DA00831D8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85A35D14249E98DA00831D8A /* GoogleService-Info.plist */; };
@@ -71,6 +72,7 @@
 		8526E9B724A3B0F300F9675B /* PlayerCreationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationVC.swift; sourceTree = "<group>"; };
 		8526E9B924A3B10300F9675B /* GymCreationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymCreationVC.swift; sourceTree = "<group>"; };
 		8579678124A592B300CF7239 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		85923B8C24B4D88A00A2C7A9 /* GymDashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymDashboardCell.swift; sourceTree = "<group>"; };
 		85A35D10249D2A5E00831D8A /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		85A35D12249D2A7100831D8A /* GymVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymVC.swift; sourceTree = "<group>"; };
 		85A35D14249E98DA00831D8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				85A4220A24AC1FBC003EA077 /* PlayerDashboardCell.swift */,
 				8517850D24AC2B150033D985 /* GymCell.swift */,
 				8517850F24AC2B260033D985 /* CourtCell.swift */,
+				85923B8C24B4D88A00A2C7A9 /* GymDashboardCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				8517851024AC2B260033D985 /* CourtCell.swift in Sources */,
 				8526E9B824A3B0F300F9675B /* PlayerCreationVC.swift in Sources */,
 				8526E9BA24A3B10300F9675B /* GymCreationVC.swift in Sources */,
+				85923B8D24B4D88A00A2C7A9 /* GymDashboardCell.swift in Sources */,
 				85A35D1724A18EBB00831D8A /* QueueCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

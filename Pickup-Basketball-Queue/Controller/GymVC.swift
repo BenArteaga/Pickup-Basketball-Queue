@@ -11,12 +11,9 @@ import Firebase
 
 class GymVC: UIViewController {
 
-    @IBOutlet weak var openQueueBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        openQueueBtn.layer.cornerRadius = 15
     }
 
     @IBAction func LogOutBtnPressed(_ sender: UIButton) {
