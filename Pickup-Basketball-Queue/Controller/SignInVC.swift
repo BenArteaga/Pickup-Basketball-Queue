@@ -26,11 +26,14 @@ class SignInVC: UIViewController {
     //if a user is already logged in, this function will grab the username and skip the login page, going straight to either the player page or gym page
      override func viewDidAppear(_ animated: Bool) {
         if Firebase.Auth.auth().currentUser != nil {
-            if(AuthService.instance.isGym) {
-                performSegue(withIdentifier: "SignInViewtoGymDashboardView", sender: nil)
-            }
-            else {
-                performSegue(withIdentifier: "SignInViewtoPlayerDashboardView", sender: nil)
+            let userID = (Auth.auth().currentUser?.uid)!
+            AuthService.instance.isGym(in_uid: userID) { (isGym) in
+                if isGym {
+                    self.performSegue(withIdentifier: "SignInViewtoGymDashboardView", sender: nil)
+                }
+                else {
+                    self.performSegue(withIdentifier: "SignInViewtoPlayerDashboardView", sender: nil)
+                }
             }
         }
      }
@@ -59,13 +62,18 @@ class SignInVC: UIViewController {
                 AuthService.instance.email = self.emailTextField.text
                 AuthService.instance.isLoggedIn = true
                 if AuthService.instance.firstTime {
+                    AuthService.instance.saveGymOrPlayer(in_isGym: false)
                     self.performSegue(withIdentifier: "SignInViewtoPlayerCreationView", sender: nil)
                 }
                 else {
-                    if(AuthService.instance.isGym == true) {
-                        self.showAlert(title: "Error", message: "It appears you already have a gym account and you cannot create both a gym and player account under the same credentials")
+                    AuthService.instance.isGym(in_uid: Auth.auth().currentUser!.uid) { (isGym) in
+                        if isGym {
+                            self.showAlert(title: "Error", message: "It appears you already have a gym account and you cannot create both a gym and player account under the same credentials")
+                        }
+                        else {
+                            self.performSegue(withIdentifier: "SignInViewtoPlayerDashboardView", sender: nil)
+                        }
                     }
-                    self.performSegue(withIdentifier: "SignInViewtoPlayerDashboardView", sender: nil)
                 }
             }
             else {
@@ -89,14 +97,17 @@ class SignInVC: UIViewController {
             if success {
                 AuthService.instance.isLoggedIn = true
                 if AuthService.instance.firstTime {
-                    AuthService.instance.isGym = true
                     self.performSegue(withIdentifier: "SignInViewtoGymCreationView", sender: nil)
                 }
                 else {
-                    if(AuthService.instance.isGym != true) {
-                        self.showAlert(title: "Error", message: "It appears you already have a player account and you cannot make both a gym and player account under the same credentials")
+                    AuthService.instance.isGym(in_uid: Auth.auth().currentUser!.uid) { (isGym) in
+                        if isGym {
+                            self.performSegue(withIdentifier: "SignInViewtoGymDashboardView", sender: nil)
+                        }
+                        else {
+                            self.showAlert(title: "Error", message: "It appears you already have a player account and you cannot make both a gym and player account under the same credentials")
+                        }
                     }
-                    self.performSegue(withIdentifier: "SignInViewtoGymDashboardView", sender: nil)
                 }
             }
             else {
@@ -104,6 +115,4 @@ class SignInVC: UIViewController {
             }
         }
     }
-    
-    
 }

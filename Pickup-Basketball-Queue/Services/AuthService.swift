@@ -14,7 +14,6 @@ class AuthService {
     
     var email: String?
     var isLoggedIn = false
-    var isGym = false
     var firstTime = false
     
     func emailLogin(_ email: String, password: String, completion: @escaping (_ Success: Bool, _ message: String) -> Void) {
@@ -62,5 +61,27 @@ class AuthService {
                 print("user deleted")
             }
         }
+    }
+    
+    //function which saves whether a user is a gym or player
+    func saveGymOrPlayer(in_isGym: Bool) {
+        let userID = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference().child("gymOrPlayer").child(userID!)
+        let isGym = ["isGym": in_isGym]
+        ref.updateChildValues(isGym)
+    }
+    
+    //function which retrieves whether a user is a gym or player
+    func isGym(in_uid: String, completion: @escaping (Bool) -> Void) {
+        let ref = Database.database().reference().child("gymOrPlayer").child(in_uid)
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            let isGym = snapshot.value as! Bool
+            if isGym {
+                completion(true)
+            }
+            else {
+                completion(false)
+            }
+        })
     }
 }

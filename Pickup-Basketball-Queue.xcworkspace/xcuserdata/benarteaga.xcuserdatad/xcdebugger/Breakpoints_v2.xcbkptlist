@@ -14,8 +14,8 @@
             filePath = "Pickup-Basketball-Queue/Services/AuthService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "emailLogin(_:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -81,6 +81,22 @@
             startingLineNumber = "72"
             endingLineNumber = "72"
             landmarkName = "cancelBtnPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D588EF8-EDEE-46F4-96B1-E94AA740942D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pickup-Basketball-Queue/Services/AuthService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "isGym(in_uid:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
