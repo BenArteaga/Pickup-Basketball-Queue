@@ -26,6 +26,7 @@
 		8526E9BA24A3B10300F9675B /* GymCreationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526E9B924A3B10300F9675B /* GymCreationVC.swift */; };
 		8579678224A592B300CF7239 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8579678124A592B300CF7239 /* StorageService.swift */; };
 		85923B8D24B4D88A00A2C7A9 /* GymDashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85923B8C24B4D88A00A2C7A9 /* GymDashboardCell.swift */; };
+		85923B8F24B6187900A2C7A9 /* Court.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85923B8E24B6187900A2C7A9 /* Court.swift */; };
 		85A35D11249D2A5E00831D8A /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D10249D2A5E00831D8A /* PlayerVC.swift */; };
 		85A35D13249D2A7100831D8A /* GymVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D12249D2A7100831D8A /* GymVC.swift */; };
 		85A35D15249E98DA00831D8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85A35D14249E98DA00831D8A /* GoogleService-Info.plist */; };
@@ -73,6 +74,7 @@
 		8526E9B924A3B10300F9675B /* GymCreationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymCreationVC.swift; sourceTree = "<group>"; };
 		8579678124A592B300CF7239 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		85923B8C24B4D88A00A2C7A9 /* GymDashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymDashboardCell.swift; sourceTree = "<group>"; };
+		85923B8E24B6187900A2C7A9 /* Court.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Court.swift; sourceTree = "<group>"; };
 		85A35D10249D2A5E00831D8A /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		85A35D12249D2A7100831D8A /* GymVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymVC.swift; sourceTree = "<group>"; };
 		85A35D14249E98DA00831D8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				850D1932249BD69B00A08DE2 /* Player.swift */,
 				85F013EC24A68E5000FA77E5 /* Gym.swift */,
+				85923B8E24B6187900A2C7A9 /* Court.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 			files = (
 				8526E9B624A195D800F9675B /* DataService.swift in Sources */,
 				8579678224A592B300CF7239 /* StorageService.swift in Sources */,
+				85923B8F24B6187900A2C7A9 /* Court.swift in Sources */,
 				850D1933249BD69B00A08DE2 /* Player.swift in Sources */,
 				850D190B249AAA6200A08DE2 /* AppDelegate.swift in Sources */,
 				85F013ED24A68E5000FA77E5 /* Gym.swift in Sources */,
