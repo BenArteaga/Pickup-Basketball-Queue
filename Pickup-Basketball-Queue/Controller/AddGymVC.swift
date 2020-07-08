@@ -15,7 +15,6 @@ class AddGymVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataService.instance.delegate = self
         
         gymsTableView.delegate = self
         gymsTableView.dataSource = self
@@ -39,11 +38,6 @@ class AddGymVC: UIViewController {
 
 }
 
-extension AddGymVC: DataServiceDelegate {
-    func dataLoaded() {
-        gymsTableView.reloadData()
-    }
-}
 
 extension AddGymVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {

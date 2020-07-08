@@ -22,6 +22,7 @@ class GymCreationVC: UIViewController {
     @IBAction func doneBtnPressed(_ sender: UIButton) {
         if let gym = gymNameTextField.text, let numCourts = Int(numCourtsTextField.text!) {
             DataService.instance.saveGym(gymName: gym, numOfCourts: numCourts)
+            CourtService.instance.saveCourts(in_numCourts: numCourts)
             self.performSegue(withIdentifier: "GymCreationViewtoGymView", sender: nil)
         }
         else {

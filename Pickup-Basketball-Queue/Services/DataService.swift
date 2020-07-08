@@ -12,17 +12,12 @@ import Firebase
 import FirebaseDatabase.FIRDataSnapshot
 import FirebaseStorage
 
-protocol DataServiceDelegate: class {
-    func dataLoaded()
-}
-
 class DataService {
     static let instance = DataService()
     //array to be filled with all of the possible gyms that a player could start following
     var gymsToAdd: [Gym] = []
     //array to be filled with the gyms that the player is currently following
     var gymsFollowing: [Gym] = []
-    weak var delegate: DataServiceDelegate?
     
     //saves player to FirebaseDatabase in the form of a dictionary
     func savePlayer(username: String?, imagePath: String?, queuePosition: Int?) {

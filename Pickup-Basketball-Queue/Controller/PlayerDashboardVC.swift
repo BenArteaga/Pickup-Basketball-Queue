@@ -18,7 +18,6 @@ class PlayerDashboardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataService.instance.delegate = self
         
         playerGymsTableView.delegate = self
         playerGymsTableView.dataSource = self
@@ -46,11 +45,6 @@ class PlayerDashboardVC: UIViewController {
     
 }
 
-extension PlayerDashboardVC: DataServiceDelegate {
-    func dataLoaded() {
-        playerGymsTableView.reloadData()
-    }
-}
 
 extension PlayerDashboardVC: UITableViewDelegate, UITableViewDataSource {
     
