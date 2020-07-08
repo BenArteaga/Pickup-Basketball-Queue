@@ -27,4 +27,28 @@ class CourtService {
             ref.updateChildValues(court)
         }
     }
+    
+    //function to load all of the courts for the current gym that is signed in
+    func loadCourts(completion: @escaping (Bool) -> Void) {
+        let userID = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference().child("courtInfo").child(userID!)
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let allCourts = snapshot.children.allObjects as? [DataSnapshot] else {
+                return completion(false)
+            }
+            
+            let dispatchGroup = DispatchGroup()
+            
+            for courtData in allCourts {
+                dispatchGroup.enter()
+                let court = Court(in_courtNum: Int(courtData.key)!, fbData: courtData.value as! Dictionary<String, AnyObject>)
+                self.courts.append(court)
+                dispatchGroup.leave()
+            }
+            
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(true)
+            })
+        })
+    }
 }
