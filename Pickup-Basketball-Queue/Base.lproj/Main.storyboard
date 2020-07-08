@@ -119,7 +119,7 @@
                         <outlet property="doneBtn" destination="uP8-Eb-iF8" id="STt-z7-LQc"/>
                         <outlet property="gymNameTextField" destination="meB-3N-wgx" id="178-dI-vhd"/>
                         <outlet property="numCourtsTextField" destination="zeg-Ee-AFx" id="3IQ-6A-TeZ"/>
-                        <segue destination="xys-QL-Tvq" kind="show" identifier="GymCreationViewtoGymView" id="PJf-R4-xES"/>
+                        <segue destination="xys-QL-Tvq" kind="show" identifier="GymCreationViewtoGymDashboardView" id="PJf-R4-xES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QfK-97-e79" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -219,7 +219,7 @@
                         <outlet property="gymSignInBtn" destination="Lhp-r6-IzS" id="l4Y-9v-TNk"/>
                         <outlet property="playerSignInBtn" destination="3fs-gb-Eja" id="6Gq-KU-hOd"/>
                         <segue destination="6fj-VG-58H" kind="show" identifier="SignInViewtoPlayerView" id="0pq-vH-y6a"/>
-                        <segue destination="xys-QL-Tvq" kind="show" identifier="SignInViewtoGymView" id="eug-70-fEw"/>
+                        <segue destination="xys-QL-Tvq" kind="show" identifier="SignInViewtoGymDashboardView" id="eug-70-fEw"/>
                         <segue destination="Kck-QE-mof" kind="show" identifier="SignInViewtoPlayerCreationView" id="e1u-ah-3fR"/>
                         <segue destination="UD3-fm-MDM" kind="show" identifier="SignInViewtoGymCreationView" id="31M-ED-BgH"/>
                         <segue destination="W22-Zy-xSw" kind="show" identifier="SignInViewtoPlayerDashboardView" id="MAa-1p-2Za"/>
@@ -656,10 +656,10 @@
             </objects>
             <point key="canvasLocation" x="2024.6376811594205" y="1544.8660714285713"/>
         </scene>
-        <!--GymView-->
+        <!--GymDashboardView-->
         <scene sceneID="k1o-D4-CTL">
             <objects>
-                <viewController id="xys-QL-Tvq" userLabel="GymView" customClass="GymVC" customModule="Pickup_Basketball_Queue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xys-QL-Tvq" userLabel="GymDashboardView" customClass="GymDashboardVC" customModule="Pickup_Basketball_Queue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="etO-Ec-l8h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -686,6 +686,7 @@
                                         <connections>
                                             <action selector="LogOutBtnPressed:" destination="6fj-VG-58H" eventType="touchUpInside" id="Hyb-j5-oRJ"/>
                                             <action selector="LogOutBtnPressed:" destination="xys-QL-Tvq" eventType="touchUpInside" id="mJ6-Ub-8rO"/>
+                                            <action selector="logOutBtnPressed:" destination="xys-QL-Tvq" eventType="touchUpInside" id="b5f-Gk-jKc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -731,6 +732,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="courtNumLabel" destination="pJU-gP-MWH" id="o79-O8-Lwi"/>
                                             <outlet property="openQueueBtn" destination="rjN-AM-IDI" id="Jg9-Ub-zb9"/>
                                         </connections>
                                     </tableViewCell>
@@ -747,7 +749,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="jWH-wu-O1d"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="GymViewtoSignInView" id="3zL-7z-vap"/>
+                        <outlet property="courtsTableView" destination="lod-eY-nQ3" id="hWG-Lc-uyC"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="GymDashboardViewtoSignInView" id="3zL-7z-vap"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbk-Ag-QrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -900,10 +903,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0pq-vH-y6a"/>
-        <segue reference="eug-70-fEw"/>
+        <segue reference="YCE-ld-Uph"/>
+        <segue reference="PJf-R4-xES"/>
         <segue reference="pYy-ic-ZFO"/>
-        <segue reference="xOk-d2-t9l"/>
+        <segue reference="iSk-Lh-XES"/>
         <segue reference="3zL-7z-vap"/>
     </inferredMetricsTieBreakers>
 </document>

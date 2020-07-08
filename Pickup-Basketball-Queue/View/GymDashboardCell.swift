@@ -11,6 +11,7 @@ import UIKit
 class GymDashboardCell: UITableViewCell {
 
     @IBOutlet weak var openQueueBtn: UIButton!
+    @IBOutlet weak var courtNumLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,10 +19,16 @@ class GymDashboardCell: UITableViewCell {
         openQueueBtn.layer.cornerRadius = 10
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(in_court: Court) {
+        courtNumLabel.text = "Court #: \(in_court.courtNum)"
+        if(in_court.queueOpen) {
+            openQueueBtn.backgroundColor = .red
+            openQueueBtn.titleLabel?.text = "Close Queue"
+        }
+        else {
+            openQueueBtn.backgroundColor = .systemGreen
+            openQueueBtn.titleLabel?.text = "Open Queue"
+        }
     }
 
 }

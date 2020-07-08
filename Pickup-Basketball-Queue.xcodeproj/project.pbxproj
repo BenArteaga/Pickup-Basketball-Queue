@@ -28,8 +28,8 @@
 		85923B8D24B4D88A00A2C7A9 /* GymDashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85923B8C24B4D88A00A2C7A9 /* GymDashboardCell.swift */; };
 		85923B8F24B6187900A2C7A9 /* Court.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85923B8E24B6187900A2C7A9 /* Court.swift */; };
 		85923B9124B61BE600A2C7A9 /* CourtService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85923B9024B61BE600A2C7A9 /* CourtService.swift */; };
+		85923B9324B62DC400A2C7A9 /* GymDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85923B9224B62DC400A2C7A9 /* GymDashboardVC.swift */; };
 		85A35D11249D2A5E00831D8A /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D10249D2A5E00831D8A /* PlayerVC.swift */; };
-		85A35D13249D2A7100831D8A /* GymVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D12249D2A7100831D8A /* GymVC.swift */; };
 		85A35D15249E98DA00831D8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85A35D14249E98DA00831D8A /* GoogleService-Info.plist */; };
 		85A35D1724A18EBB00831D8A /* QueueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A35D1624A18EBB00831D8A /* QueueCell.swift */; };
 		85A4220B24AC1FBC003EA077 /* PlayerDashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4220A24AC1FBC003EA077 /* PlayerDashboardCell.swift */; };
@@ -77,8 +77,8 @@
 		85923B8C24B4D88A00A2C7A9 /* GymDashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymDashboardCell.swift; sourceTree = "<group>"; };
 		85923B8E24B6187900A2C7A9 /* Court.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Court.swift; sourceTree = "<group>"; };
 		85923B9024B61BE600A2C7A9 /* CourtService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtService.swift; sourceTree = "<group>"; };
+		85923B9224B62DC400A2C7A9 /* GymDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymDashboardVC.swift; sourceTree = "<group>"; };
 		85A35D10249D2A5E00831D8A /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
-		85A35D12249D2A7100831D8A /* GymVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymVC.swift; sourceTree = "<group>"; };
 		85A35D14249E98DA00831D8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85A35D1624A18EBB00831D8A /* QueueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueCell.swift; sourceTree = "<group>"; };
 		85A4220A24AC1FBC003EA077 /* PlayerDashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDashboardCell.swift; sourceTree = "<group>"; };
@@ -195,12 +195,12 @@
 			children = (
 				850D1930249AADFA00A08DE2 /* SignInVC.swift */,
 				85A35D10249D2A5E00831D8A /* PlayerVC.swift */,
-				85A35D12249D2A7100831D8A /* GymVC.swift */,
 				8526E9B724A3B0F300F9675B /* PlayerCreationVC.swift */,
 				8526E9B924A3B10300F9675B /* GymCreationVC.swift */,
 				85A4220C24AC1FE8003EA077 /* PlayerDashboardVC.swift */,
 				8517850924AC2A6C0033D985 /* AddGymVC.swift */,
 				8517850B24AC2A8D0033D985 /* CourtOptionsVC.swift */,
+				85923B9224B62DC400A2C7A9 /* GymDashboardVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -405,10 +405,10 @@
 				85A4220B24AC1FBC003EA077 /* PlayerDashboardCell.swift in Sources */,
 				850D190D249AAA6200A08DE2 /* SceneDelegate.swift in Sources */,
 				85A35D11249D2A5E00831D8A /* PlayerVC.swift in Sources */,
+				85923B9324B62DC400A2C7A9 /* GymDashboardVC.swift in Sources */,
 				8517850A24AC2A6C0033D985 /* AddGymVC.swift in Sources */,
 				850D1937249D1B8600A08DE2 /* AuthService.swift in Sources */,
 				85923B9124B61BE600A2C7A9 /* CourtService.swift in Sources */,
-				85A35D13249D2A7100831D8A /* GymVC.swift in Sources */,
 				8517850E24AC2B150033D985 /* GymCell.swift in Sources */,
 				850D1931249AADFA00A08DE2 /* SignInVC.swift in Sources */,
 				85A4220D24AC1FE8003EA077 /* PlayerDashboardVC.swift in Sources */,

@@ -36,6 +36,6 @@ class Court {
     init(in_courtNum: Int, fbData: Dictionary<String, AnyObject>) {
         _courtNum = in_courtNum
         _queueOpen = fbData["open"] as! Bool
-        _queue = fbData["queue"] as! [Player]
+        _queue = fbData["queue"] as? [Player] ?? [Player]()
     }
 }

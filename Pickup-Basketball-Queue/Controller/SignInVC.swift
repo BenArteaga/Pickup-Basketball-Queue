@@ -27,7 +27,7 @@ class SignInVC: UIViewController {
      override func viewDidAppear(_ animated: Bool) {
         if Firebase.Auth.auth().currentUser != nil {
             if(AuthService.instance.isGym) {
-                performSegue(withIdentifier: "SignInViewtoGymView", sender: nil)
+                performSegue(withIdentifier: "SignInViewtoGymDashboardView", sender: nil)
             }
             else {
                 performSegue(withIdentifier: "SignInViewtoPlayerDashboardView", sender: nil)
@@ -96,7 +96,7 @@ class SignInVC: UIViewController {
                     if(AuthService.instance.isGym != true) {
                         self.showAlert(title: "Error", message: "It appears you already have a player account and you cannot make both a gym and player account under the same credentials")
                     }
-                    self.performSegue(withIdentifier: "SignInViewtoGymView", sender: nil)
+                    self.performSegue(withIdentifier: "SignInViewtoGymDashboardView", sender: nil)
                 }
             }
             else {

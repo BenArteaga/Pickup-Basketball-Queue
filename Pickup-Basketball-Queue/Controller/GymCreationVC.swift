@@ -23,7 +23,7 @@ class GymCreationVC: UIViewController {
         if let gym = gymNameTextField.text, let numCourts = Int(numCourtsTextField.text!) {
             DataService.instance.saveGym(gymName: gym, numOfCourts: numCourts)
             CourtService.instance.saveCourts(in_numCourts: numCourts)
-            self.performSegue(withIdentifier: "GymCreationViewtoGymView", sender: nil)
+            self.performSegue(withIdentifier: "GymCreationViewtoGymDashboardView", sender: nil)
         }
         else {
             showAlert(title: "Error", message: "Please make sure you have entered a valid gym name and valid number of courts (e.g. 1, 2, 3)" )
