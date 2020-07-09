@@ -30,6 +30,7 @@ class CourtService {
     
     //function to load all of the courts for the current gym that is signed in
     func loadCourts(completion: @escaping (Bool) -> Void) {
+        courts.removeAll()
         let userID = Auth.auth().currentUser?.uid
         let ref = Database.database().reference().child("courtInfo").child(userID!)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
