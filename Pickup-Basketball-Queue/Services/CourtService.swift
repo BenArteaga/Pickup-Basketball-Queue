@@ -51,4 +51,19 @@ class CourtService {
             })
         })
     }
+    
+    //function to update the backend info of whether or queue for a given court is open or closed
+    func updateQueueStatus(isClosed: Bool, courtNum: Int) {
+        let userID = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference().child("courtInfo").child(userID!).child("\(courtNum)")
+        let queue = [Player]()
+        var courtInfoDict: Dictionary<String, AnyObject>
+        if isClosed {
+            courtInfoDict = ["open": true, "queue": queue] as Dictionary<String, AnyObject>
+        }
+        else {
+            courtInfoDict = ["open": false, "queue": queue] as Dictionary<String, AnyObject>
+        }
+        ref.updateChildValues(courtInfoDict)
+    }
 }

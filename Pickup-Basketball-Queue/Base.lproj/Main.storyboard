@@ -727,6 +727,9 @@
                                                     <state key="normal" title="Open Queue">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="openQueueBtnPressed:" destination="Fug-t3-ody" eventType="touchUpInside" id="GOb-cL-TVi"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>

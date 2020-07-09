@@ -55,6 +55,7 @@ extension GymDashboardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let court = CourtService.instance.courts[indexPath.row]
         if let cell = courtsTableView.dequeueReusableCell(withIdentifier: "GymDashboardCell") as? GymDashboardCell {
+            cell.indexPathForCell = indexPath
             cell.configureCell(in_court: court)
             return cell
         }

@@ -181,11 +181,8 @@
 		850D192E249AADBC00A08DE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				85A35D1624A18EBB00831D8A /* QueueCell.swift */,
-				85A4220A24AC1FBC003EA077 /* PlayerDashboardCell.swift */,
-				8517850D24AC2B150033D985 /* GymCell.swift */,
-				8517850F24AC2B260033D985 /* CourtCell.swift */,
-				85923B8C24B4D88A00A2C7A9 /* GymDashboardCell.swift */,
+				8534B07F24B76F1C00705B64 /* Gym Cells */,
+				8534B07E24B76F1300705B64 /* Player Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,16 +190,51 @@
 		850D192F249AADC600A08DE2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8534B07D24B76EAD00705B64 /* Gym Stuff */,
+				8534B07C24B76E9B00705B64 /* Player Stuff */,
 				850D1930249AADFA00A08DE2 /* SignInVC.swift */,
-				85A35D10249D2A5E00831D8A /* PlayerVC.swift */,
-				8526E9B724A3B0F300F9675B /* PlayerCreationVC.swift */,
-				8526E9B924A3B10300F9675B /* GymCreationVC.swift */,
-				85A4220C24AC1FE8003EA077 /* PlayerDashboardVC.swift */,
-				8517850924AC2A6C0033D985 /* AddGymVC.swift */,
-				8517850B24AC2A8D0033D985 /* CourtOptionsVC.swift */,
-				85923B9224B62DC400A2C7A9 /* GymDashboardVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		8534B07C24B76E9B00705B64 /* Player Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				8517850B24AC2A8D0033D985 /* CourtOptionsVC.swift */,
+				85A4220C24AC1FE8003EA077 /* PlayerDashboardVC.swift */,
+				8517850924AC2A6C0033D985 /* AddGymVC.swift */,
+				8526E9B724A3B0F300F9675B /* PlayerCreationVC.swift */,
+				85A35D10249D2A5E00831D8A /* PlayerVC.swift */,
+			);
+			path = "Player Stuff";
+			sourceTree = "<group>";
+		};
+		8534B07D24B76EAD00705B64 /* Gym Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				8526E9B924A3B10300F9675B /* GymCreationVC.swift */,
+				85923B9224B62DC400A2C7A9 /* GymDashboardVC.swift */,
+			);
+			path = "Gym Stuff";
+			sourceTree = "<group>";
+		};
+		8534B07E24B76F1300705B64 /* Player Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8517850D24AC2B150033D985 /* GymCell.swift */,
+				8517850F24AC2B260033D985 /* CourtCell.swift */,
+				85A4220A24AC1FBC003EA077 /* PlayerDashboardCell.swift */,
+				85A35D1624A18EBB00831D8A /* QueueCell.swift */,
+			);
+			path = "Player Cells";
+			sourceTree = "<group>";
+		};
+		8534B07F24B76F1C00705B64 /* Gym Cells */ = {
+			isa = PBXGroup;
+			children = (
+				85923B8C24B4D88A00A2C7A9 /* GymDashboardCell.swift */,
+			);
+			path = "Gym Cells";
 			sourceTree = "<group>";
 		};
 		8A6140C294345E3A8255F1AD /* Frameworks */ = {
