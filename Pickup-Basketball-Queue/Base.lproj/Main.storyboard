@@ -685,7 +685,6 @@
                                         </state>
                                         <connections>
                                             <action selector="LogOutBtnPressed:" destination="6fj-VG-58H" eventType="touchUpInside" id="Hyb-j5-oRJ"/>
-                                            <action selector="LogOutBtnPressed:" destination="xys-QL-Tvq" eventType="touchUpInside" id="mJ6-Ub-8rO"/>
                                             <action selector="logOutBtnPressed:" destination="xys-QL-Tvq" eventType="touchUpInside" id="b5f-Gk-jKc"/>
                                         </connections>
                                     </button>

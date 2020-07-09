@@ -75,7 +75,8 @@ class AuthService {
     func isGym(in_uid: String, completion: @escaping (Bool) -> Void) {
         let ref = Database.database().reference().child("gymOrPlayer").child(in_uid)
         ref.observeSingleEvent(of: .value, with: { snapshot in
-            let isGym = snapshot.value as! Bool
+            let isGymDict = snapshot.value as! Dictionary<String, AnyObject>
+            let isGym = isGymDict["isGym"] as! Bool
             if isGym {
                 completion(true)
             }

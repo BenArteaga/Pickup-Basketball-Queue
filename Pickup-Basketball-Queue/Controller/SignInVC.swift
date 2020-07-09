@@ -97,6 +97,7 @@ class SignInVC: UIViewController {
             if success {
                 AuthService.instance.isLoggedIn = true
                 if AuthService.instance.firstTime {
+                    AuthService.instance.saveGymOrPlayer(in_isGym: true)
                     self.performSegue(withIdentifier: "SignInViewtoGymCreationView", sender: nil)
                 }
                 else {
