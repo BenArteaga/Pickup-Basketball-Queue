@@ -26,6 +26,7 @@ class CourtOptionsVC: UIViewController {
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "CourtOptionsViewtoPlayerDashboardView", sender: nil)
     }
     
 }

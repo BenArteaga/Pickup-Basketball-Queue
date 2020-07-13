@@ -630,7 +630,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="9Gb-pS-epN" customClass="CourtCell" customModule="Pickup_Basketball_Queue" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourtCell" rowHeight="70" id="9Gb-pS-epN" customClass="CourtCell" customModule="Pickup_Basketball_Queue" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Gb-pS-epN" id="eHN-5A-3AR">
@@ -929,7 +929,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0pq-vH-y6a"/>
+        <segue reference="YCE-ld-Uph"/>
         <segue reference="PJf-R4-xES"/>
         <segue reference="pYy-ic-ZFO"/>
         <segue reference="iSk-Lh-XES"/>

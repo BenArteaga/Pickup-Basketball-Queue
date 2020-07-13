@@ -19,8 +19,15 @@ class CourtCell: UITableViewCell {
     }
     
     func configureCell(in_court: Court) {
-        courtNumLabel.text = "\(in_court.courtNum)"
-        queueSizeLabel.text = "\(in_court.queue.count)"
+        courtNumLabel.text = "Court Num: \(in_court.courtNum)"
+        if in_court.queueOpen {
+            queueSizeLabel.text = "Queue Size: \(in_court.queue.count)"
+            queueSizeLabel.textColor = .systemGreen
+        }
+        else {
+            queueSizeLabel.text = "Queue is closed"
+            queueSizeLabel.textColor = .red
+        }
     }
 
 }
