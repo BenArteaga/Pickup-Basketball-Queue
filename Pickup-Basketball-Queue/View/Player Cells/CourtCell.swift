@@ -10,15 +10,17 @@ import UIKit
 
 class CourtCell: UITableViewCell {
 
+    @IBOutlet weak var courtNumLabel: UILabel!
+    @IBOutlet weak var queueSizeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configureCell(in_court: Court) {
+        courtNumLabel.text = "\(in_court.courtNum)"
+        queueSizeLabel.text = "\(in_court.queue.count)"
     }
 
 }

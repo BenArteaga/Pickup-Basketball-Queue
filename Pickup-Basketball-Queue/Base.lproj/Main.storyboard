@@ -480,7 +480,7 @@
                     <connections>
                         <outlet property="addGymBtn" destination="cyS-pQ-13u" id="z3e-gJ-1fn"/>
                         <outlet property="playerGymsTableView" destination="R5s-9z-5kx" id="myZ-25-YYY"/>
-                        <segue destination="BaI-sv-fHW" kind="show" identifier="PlayerDashboardtoCourtOptions" id="pYy-ic-ZFO"/>
+                        <segue destination="BaI-sv-fHW" kind="show" identifier="PlayerDashboardViewtoCourtOptionsView" id="pYy-ic-ZFO"/>
                         <segue destination="mSE-ts-1TF" kind="show" identifier="PlayerDashboardViewtoAddGymView" id="edJ-Zr-sSc"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="PlayerDashboardViewtoSignInView" id="iu3-ds-6Br"/>
                     </connections>
@@ -587,7 +587,7 @@
         <!--CourtOptionsView-->
         <scene sceneID="VeB-X2-1Sv">
             <objects>
-                <viewController id="BaI-sv-fHW" userLabel="CourtOptionsView" customClass="CourtOptionsVC" customModule="Pickup_Basketball_Queue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CourtOptionsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BaI-sv-fHW" userLabel="CourtOptionsView" customClass="CourtOptionsVC" customModule="Pickup_Basketball_Queue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LGl-AC-v4D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -608,6 +608,9 @@
                                         <state key="normal" title="Back">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="BaI-sv-fHW" eventType="touchUpInside" id="rLD-hb-xIO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -641,8 +644,19 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Queue Size: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKS-AB-aFi">
+                                                    <rect key="frame" x="186" y="11" width="208" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="courtNumLabel" destination="AmO-dT-Szt" id="Ydg-bk-T2p"/>
+                                            <outlet property="queueSizeLabel" destination="dKS-AB-aFi" id="daH-2F-RUF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -657,6 +671,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Aj5-u2-cSi"/>
                     <connections>
+                        <outlet property="courtsTableView" destination="fAr-F3-jXn" id="oy9-Ps-vgn"/>
                         <segue destination="6fj-VG-58H" kind="show" identifier="CourtOptionsViewtoPlayerView" id="YCE-ld-Uph"/>
                         <segue destination="W22-Zy-xSw" kind="show" identifier="CourtOptionsViewtoPlayerDashboardView" id="iSk-Lh-XES"/>
                     </connections>
@@ -728,17 +743,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Queue Size: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mX2-0S-Onx">
-                                                    <rect key="frame" x="186" y="14" width="208" height="43"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjN-AM-IDI">
+                                                    <rect key="frame" x="257" y="11" width="137" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="Open Queue">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="openQueueBtnPressed:" destination="Fug-t3-ody" eventType="touchUpInside" id="GOb-cL-TVi"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="courtNumLabel" destination="pJU-gP-MWH" id="o79-O8-Lwi"/>
+                                            <outlet property="openQueueBtn" destination="rjN-AM-IDI" id="Jg9-Ub-zb9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -908,10 +929,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YCE-ld-Uph"/>
+        <segue reference="0pq-vH-y6a"/>
         <segue reference="PJf-R4-xES"/>
         <segue reference="pYy-ic-ZFO"/>
         <segue reference="iSk-Lh-XES"/>
-        <segue reference="3zL-7z-vap"/>
+        <segue reference="Cte-QW-Est"/>
     </inferredMetricsTieBreakers>
 </document>

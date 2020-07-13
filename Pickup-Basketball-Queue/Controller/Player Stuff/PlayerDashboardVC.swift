@@ -70,4 +70,9 @@ extension PlayerDashboardVC: UITableViewDelegate, UITableViewDataSource {
             return GymCell()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        CourtService.instance.gymID = DataService.instance.gymsFollowing[indexPath.row].gymID!
+        performSegue(withIdentifier: "PlayerDashboardViewtoCourtOptionsView", sender: nil)
+    }
 }
