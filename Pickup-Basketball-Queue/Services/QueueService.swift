@@ -27,4 +27,28 @@ class QueueService {
         let newPlayerOnQueue = ["\(queue.count + 1)": userID] as Dictionary<String, AnyObject>
         ref.updateChildValues(newPlayerOnQueue)
     }
+    
+    func loadQueue(completion: @escaping (Bool) -> Void) {
+        let ref = Database.database().reference().child("courtInfo").child(gymID).child("\(courtNum)").child("queue")
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let allPlayers = snapshot.children.allObjects as? [DataSnapshot] else {
+                return completion(false)
+            }
+            
+            let dispatchGroup = DispatchGroup()
+            for playerSnap in allPlayers {
+                dispatchGroup.enter()
+                DataService.instance.getPlayerforPlayerID(in_playerID: playerSnap.value as! String) { (player) in
+                    if let newPlayer = player {
+                        self.queue.append(newPlayer)
+                    }
+                    dispatchGroup.leave()
+                }
+            }
+            
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(true)
+            })
+        })
+    }
 }

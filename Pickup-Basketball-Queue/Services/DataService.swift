@@ -161,4 +161,13 @@ class DataService {
         })
         
     }
+    
+    //function to get a player by their playerID
+    func getPlayerforPlayerID(in_playerID: String, completion: @ escaping (Player?) -> Void) {
+        let ref = Database.database().reference().child("players").child(in_playerID)
+        ref.observeSingleEvent(of: .value, with: { (data) in
+            let player = Player(in_playerID: in_playerID, playerData: data.value as! Dictionary<String, AnyObject>)
+            completion(player)
+        })
+    }
 }
