@@ -54,4 +54,9 @@ extension CourtOptionsVC: UITableViewDelegate, UITableViewDataSource {
             return CourtCell()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let court = CourtService.instance.courts[indexPath.row]
+        
+    }
 }
