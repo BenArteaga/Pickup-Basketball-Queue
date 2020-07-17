@@ -22,10 +22,10 @@ class QueueCell: UITableViewCell {
         playerImg.layer.cornerRadius = 10
     }
     
-    func configureCell(player: Player) {
-        playerNameLabel.text = player.playerName
-        queuePositionLabel.text = "\(String(describing: player.queuePosition))"
-        let imageUrl = URL(string: player.imagePath)
+    func configureCell(in_player: Player) {
+        playerNameLabel.text = in_player.playerName
+        queuePositionLabel.text = "\(String(describing: in_player.queuePosition))"
+        let imageUrl = URL(string: in_player.imagePath)
         playerImg.kf.setImage(with: imageUrl)
     }
 

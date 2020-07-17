@@ -28,6 +28,7 @@ class QueueService {
         ref.updateChildValues(newPlayerOnQueue)
     }
     
+    //function that loads the current queue
     func loadQueue(completion: @escaping (Bool) -> Void) {
         let ref = Database.database().reference().child("courtInfo").child(gymID).child("\(courtNum)").child("queue")
         ref.observeSingleEvent(of: .value, with: { (snapshot) in

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class QueueVC: UIViewController, UITableViewDelegate {
+class QueueVC: UIViewController {
 
     @IBOutlet weak var playerQueue: UITableView!
     @IBOutlet weak var getOnQueueBtn: UIButton!
@@ -17,11 +17,24 @@ class QueueVC: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.playerQueue.delegate = self
+        self.playerQueue.dataSource = self
+        
         getOnQueueBtn.layer.cornerRadius = 10
+        
+        QueueService.instance.loadQueue() { (success) in
+            if success {
+                self.playerQueue.reloadData()
+            }
+        }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+    //takes a title and message and uses them to create and show a custom alert
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func LogOutBtnPressed(_ sender: UIButton) {
@@ -34,4 +47,29 @@ class QueueVC: UIViewController, UITableViewDelegate {
         }
     }
     
+}
+
+extension QueueVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        QueueService.instance.queue.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let player = QueueService.instance.queue[indexPath.row]
+        if let cell = playerQueue.dequeueReusableCell(withIdentifier: "QueueCell") as? QueueCell {
+            cell.configureCell(in_player: player)
+            return cell
+        }
+        else {
+            return QueueCell()
+        }
+    }
 }
