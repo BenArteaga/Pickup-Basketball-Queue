@@ -672,7 +672,7 @@
                     <navigationItem key="navigationItem" id="Aj5-u2-cSi"/>
                     <connections>
                         <outlet property="courtsTableView" destination="fAr-F3-jXn" id="oy9-Ps-vgn"/>
-                        <segue destination="6fj-VG-58H" kind="show" identifier="CourtOptionsViewtoPlayerView" id="YCE-ld-Uph"/>
+                        <segue destination="6fj-VG-58H" kind="show" identifier="CourtOptionsViewtoQueueView" id="YCE-ld-Uph"/>
                         <segue destination="W22-Zy-xSw" kind="show" identifier="CourtOptionsViewtoPlayerDashboardView" id="iSk-Lh-XES"/>
                     </connections>
                 </viewController>
@@ -783,10 +783,10 @@
             </objects>
             <point key="canvasLocation" x="-642.02898550724638" y="915.40178571428567"/>
         </scene>
-        <!--PlayerView-->
+        <!--QueueView-->
         <scene sceneID="rkP-X2-sKd">
             <objects>
-                <viewController id="6fj-VG-58H" userLabel="PlayerView" customClass="PlayerVC" customModule="Pickup_Basketball_Queue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6fj-VG-58H" userLabel="QueueView" customClass="QueueVC" customModule="Pickup_Basketball_Queue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yiD-n4-xo4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -920,7 +920,7 @@
                         <outlet property="getOnQueueBtn" destination="QSl-Ab-m75" id="VIO-OI-vH1"/>
                         <outlet property="playerQueue" destination="1tG-T2-hMt" id="osb-uD-zt3"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="PlayerViewtoSignInView" id="Cte-QW-Est"/>
-                        <segue destination="BaI-sv-fHW" kind="show" identifier="PlayerViewtoCourtOptionsView" id="gu4-4P-nxF"/>
+                        <segue destination="BaI-sv-fHW" kind="show" identifier="QueueViewtoCourtOptionsView" id="gu4-4P-nxF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opX-oa-9Sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -931,7 +931,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="YCE-ld-Uph"/>
         <segue reference="PJf-R4-xES"/>
-        <segue reference="pYy-ic-ZFO"/>
+        <segue reference="gu4-4P-nxF"/>
         <segue reference="iSk-Lh-XES"/>
         <segue reference="Cte-QW-Est"/>
     </inferredMetricsTieBreakers>

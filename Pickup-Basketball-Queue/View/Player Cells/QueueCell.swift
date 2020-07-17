@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class QueueCell: UITableViewCell {
 
@@ -24,7 +25,8 @@ class QueueCell: UITableViewCell {
     func configureCell(player: Player) {
         playerNameLabel.text = player.playerName
         queuePositionLabel.text = "\(String(describing: player.queuePosition))"
-//        playerImg.image =
+        let imageUrl = URL(string: player.imagePath)
+        playerImg.kf.setImage(with: imageUrl)
     }
 
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class PlayerVC: UIViewController, UITableViewDelegate {
+class QueueVC: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var playerQueue: UITableView!
     @IBOutlet weak var getOnQueueBtn: UIButton!
