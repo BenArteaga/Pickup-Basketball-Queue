@@ -24,7 +24,7 @@ class QueueCell: UITableViewCell {
     
     func configureCell(in_player: Player) {
         playerNameLabel.text = in_player.playerName
-        queuePositionLabel.text = "\(String(describing: in_player.queuePosition))"
+        queuePositionLabel.text = "\(in_player.queuePosition ?? -1)"
         let imageUrl = URL(string: in_player.imagePath)
         playerImg.kf.setImage(with: imageUrl)
     }

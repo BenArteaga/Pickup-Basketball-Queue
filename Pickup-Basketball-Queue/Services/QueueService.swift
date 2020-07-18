@@ -26,6 +26,11 @@ class QueueService {
         let ref = Database.database().reference().child("courtInfo").child(gymID).child("\(courtNum)").child("queue")
         let newPlayerOnQueue = ["\(queue.count + 1)": userID] as Dictionary<String, AnyObject>
         ref.updateChildValues(newPlayerOnQueue)
+        
+        //update the queue position in the players section of the backend
+        let playerRef = Database.database().reference().child("players").child(userID!)
+        let newPosition = ["position": queue.count + 1] as Dictionary<String, AnyObject>
+        playerRef.updateChildValues(newPosition)
     }
     
     //function that loads the current queue
