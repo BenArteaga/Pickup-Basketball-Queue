@@ -29,6 +29,15 @@ class QueueVC: UIViewController {
         }
     }
     
+    @IBAction func getOnQueueBtnPressed(_ sender: UIButton) {
+        QueueService.instance.addCurrentUserToQueue()
+        QueueService.instance.loadQueue() { (success) in
+            if success {
+                self.playerQueue.reloadData()
+            }
+        }
+    }
+    
     //takes a title and message and uses them to create and show a custom alert
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -37,16 +46,9 @@ class QueueVC: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func LogOutBtnPressed(_ sender: UIButton) {
-        do {
-            try Firebase.Auth.auth().signOut()
-            AuthService.instance.isLoggedIn = false
-            performSegue(withIdentifier: "PlayerViewtoSignInView", sender: nil)
-        } catch {
-            print("An error occured signing out")
-        }
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "QueueViewtoCourtOptionsView", sender: nil)
     }
-    
 }
 
 extension QueueVC: UITableViewDelegate, UITableViewDataSource {

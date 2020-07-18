@@ -56,7 +56,8 @@ extension CourtOptionsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let court = CourtService.instance.courts[indexPath.row]
-        
+        QueueService.instance.gymID = CourtService.instance.gymID
+        QueueService.instance.courtNum = indexPath.row
+        performSegue(withIdentifier: "CourtOptionsViewtoQueueView", sender: nil)
     }
 }

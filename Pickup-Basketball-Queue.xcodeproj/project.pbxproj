@@ -203,10 +203,10 @@
 		8534B07C24B76E9B00705B64 /* Player Stuff */ = {
 			isa = PBXGroup;
 			children = (
-				8517850B24AC2A8D0033D985 /* CourtOptionsVC.swift */,
+				8526E9B724A3B0F300F9675B /* PlayerCreationVC.swift */,
 				85A4220C24AC1FE8003EA077 /* PlayerDashboardVC.swift */,
 				8517850924AC2A6C0033D985 /* AddGymVC.swift */,
-				8526E9B724A3B0F300F9675B /* PlayerCreationVC.swift */,
+				8517850B24AC2A8D0033D985 /* CourtOptionsVC.swift */,
 				85A35D10249D2A5E00831D8A /* QueueVC.swift */,
 			);
 			path = "Player Stuff";
