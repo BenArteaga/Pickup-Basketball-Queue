@@ -27,6 +27,17 @@ class QueueVC: UIViewController {
                 self.playerQueue.reloadData()
             }
         }
+        
+        QueueService.instance.isOnQueue() { (onQueue) in
+            if onQueue {
+                self.getOnQueueBtn.backgroundColor = .red
+                self.getOnQueueBtn.setTitle("Get Off Queue", for: .normal)
+            }
+            else {
+                self.getOnQueueBtn.backgroundColor = .systemGreen
+                self.getOnQueueBtn.setTitle("Get On Queue", for: .normal)
+            }
+        }
     }
     
     @IBAction func getOnQueueBtnPressed(_ sender: UIButton) {
