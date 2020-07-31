@@ -30,12 +30,25 @@ class QueueVC: UIViewController {
     }
     
     @IBAction func getOnQueueBtnPressed(_ sender: UIButton) {
-        QueueService.instance.addCurrentUserToQueue()
-        QueueService.instance.loadQueue() { (success) in
-            if success {
-                self.playerQueue.reloadData()
+        if getOnQueueBtn.backgroundColor == .red {
+            QueueService.instance.removeCurrentUserFromQueue() { (success) in
+//                if success {
+//                    self.getOnQueueBtn.backgroundColor = .systemGreen
+//                    self.getOnQueueBtn.setTitle("Get On Queue", for: .normal)
+//                }
+//                else {
+//                    self.showAlert(title: "Error", message: "Something went wrong!")
+//                }
             }
+            self.getOnQueueBtn.backgroundColor = .systemGreen
+            self.getOnQueueBtn.setTitle("Get On Queue", for: .normal)
         }
+        else {
+            QueueService.instance.addCurrentUserToQueue()
+            getOnQueueBtn.backgroundColor = .red
+            getOnQueueBtn.setTitle("Get Off Queue", for: .normal)
+        }
+
     }
     
     //takes a title and message and uses them to create and show a custom alert

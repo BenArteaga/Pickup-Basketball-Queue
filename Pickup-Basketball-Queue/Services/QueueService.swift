@@ -33,11 +33,35 @@ class QueueService {
         playerRef.updateChildValues(newPosition)
     }
     
+    func removeCurrentUserFromQueue(completion: @escaping (Bool) -> Void) {
+        let userID = Auth.auth().currentUser?.uid
+        var ref = Database.database().reference().child("courtInfo").child(gymID).child("\(courtNum)").child("queue")
+        
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
+        DataService.instance.getPlayerforPlayerID(in_playerID: userID!) { (player) in
+//            ref = ref.child("\(player?.queuePosition ?? 0)")
+//            ref.removeValue { error, _ in
+//                if error != nil {
+//                    print("\(error ?? "" as! Error)")
+//                    completion(false)
+//                }
+//                dispatchGroup.leave()
+//            }
+            let queueRemoveData = ["\(player?.queuePosition ?? 0)": NSNull()]
+            ref.updateChildValues(queueRemoveData)
+        }
+        
+        dispatchGroup.notify(queue: .main, execute: {
+            completion(true)
+        })
+    }
+    
     //function that loads the current queue
     func loadQueue(completion: @escaping (Bool) -> Void) {
-        queue.removeAll()
         let ref = Database.database().reference().child("courtInfo").child(gymID).child("\(courtNum)").child("queue")
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.observe(.value, with: { (snapshot) in
+            self.queue.removeAll()
             guard let allPlayers = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion(false)
             }
