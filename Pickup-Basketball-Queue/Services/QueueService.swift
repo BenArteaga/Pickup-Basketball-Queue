@@ -40,16 +40,14 @@ class QueueService {
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
         DataService.instance.getPlayerforPlayerID(in_playerID: userID!) { (player) in
-//            ref = ref.child("\(player?.queuePosition ?? 0)")
-//            ref.removeValue { error, _ in
-//                if error != nil {
-//                    print("\(error ?? "" as! Error)")
-//                    completion(false)
-//                }
-//                dispatchGroup.leave()
-//            }
+
             let queueRemoveData = ["\(player?.queuePosition ?? 0)": NSNull()]
             ref.updateChildValues(queueRemoveData)
+            
+            //set the queuePosition for that player back to -1, symbolizing that they are no longer on the queue
+            let playerRef = Database.database().reference().child("players").child(userID!)
+            let queuePositionData = ["position": -1]
+            playerRef.updateChildValues(queuePositionData)
         }
         
         dispatchGroup.notify(queue: .main, execute: {
@@ -80,6 +78,22 @@ class QueueService {
             dispatchGroup.notify(queue: .main, execute: {
                 completion(true)
             })
+        })
+    }
+    
+    //function to check whether or not the current user is already on the queue
+    func isOnQueue(completion: @escaping (Bool) -> Void) {
+        let userID = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference().child("players").child(userID!)
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            let playerDict = snapshot.value as! Dictionary<String, AnyObject>
+            if playerDict["position"] as! Int == -1 {
+                completion(false)
+            }
+            else {
+                completion(true)
+            }
         })
     }
 }
