@@ -89,7 +89,9 @@ extension QueueVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let player = QueueService.instance.queue[indexPath.row]
+        let row = indexPath.row
+        print(row)
+        let player = QueueService.instance.queue[row]
         if let cell = playerQueue.dequeueReusableCell(withIdentifier: "QueueCell") as? QueueCell {
             cell.configureCell(in_player: player)
             return cell

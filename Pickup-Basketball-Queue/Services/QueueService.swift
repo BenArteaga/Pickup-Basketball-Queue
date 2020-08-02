@@ -76,6 +76,8 @@ class QueueService {
             }
             
             dispatchGroup.notify(queue: .main, execute: {
+                //sort the queue to ensure that it will appear in order
+                self.queue = self.queue.sorted(by: {$0.queuePosition! < $1.queuePosition!})
                 completion(true)
             })
         })
