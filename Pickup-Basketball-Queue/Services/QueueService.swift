@@ -44,6 +44,13 @@ class QueueService {
             let queueRemoveData = ["\(player?.queuePosition ?? 0)": NSNull()]
             ref.updateChildValues(queueRemoveData)
             
+            //update the other queue positions
+            self.updateQueuePositions(positionRemoved: (player?.queuePosition)!) { (success) in
+                if success {
+                    print("success")
+                }
+            }
+            
             //set the queuePosition for that player back to -1, symbolizing that they are no longer on the queue
             let playerRef = Database.database().reference().child("players").child(userID!)
             let queuePositionData = ["position": -1]
@@ -113,9 +120,39 @@ class QueueService {
         })
     }
     
+    //function to update the queue size i the database based on the size of the queue array
     func updateQueueSize() {
         let ref = Database.database().reference().child("courtInfo").child(gymID).child("\(courtNum)")
         let newSize = ["queueSize": self.queue.count]
         ref.updateChildValues(newSize)
+    }
+    
+    //function to update the queue position of the other players after someone is removed from the queue
+    func updateQueuePositions(positionRemoved: Int, completion: @escaping (Bool) -> Void) {
+        let ref = Database.database().reference().child("courtInfo").child(gymID).child("\(courtNum)").child("queue")
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let allPlayers = snapshot.children.allObjects as? [DataSnapshot] else {
+                return completion(false)
+            }
+            
+            for playerSnap in allPlayers {
+                if Int(playerSnap.key)! > positionRemoved {
+                    //update position in queue
+                    let newPostion = ["\(Int(playerSnap.key)! - 1)": playerSnap.value] as Dictionary<String, AnyObject>
+                    ref.updateChildValues(newPostion)
+                    
+                    //update position in the player's info
+                    let playerRef = Database.database().reference().child("players").child(playerSnap.value as! String)
+                    let positionData = ["position": Int(playerSnap.key)! - 1] as Dictionary<String, AnyObject>
+                    playerRef.updateChildValues(positionData)
+                }
+            }
+            
+            //since each spot is being replaced by the one above it, the last player will be in the last two spots, so the the last spot must be erased
+            let nullPosition = ["\(self.queue.count)": NSNull()]
+            ref.updateChildValues(nullPosition)
+        })
+        
+        completion(true)
     }
 }
