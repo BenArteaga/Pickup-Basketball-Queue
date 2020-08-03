@@ -11,7 +11,7 @@ import Foundation
 class Court {
     fileprivate var _queueOpen: Bool
     fileprivate var _courtNum: Int
-    fileprivate var _queue: [Player]
+    fileprivate var _queueSize: Int
     
     var queueOpen: Bool {
         return _queueOpen
@@ -21,21 +21,21 @@ class Court {
         return _courtNum
     }
     
-    var queue: [Player] {
-        return _queue
+    var queueSize: Int {
+        return _queueSize
     }
     
     //regular initializer
-    init(in_queueOpen: Bool, in_courtNum: Int, in_queue: [Player]) {
+    init(in_queueOpen: Bool, in_courtNum: Int, in_queueSize: Int) {
         _queueOpen = in_queueOpen
         _courtNum = in_courtNum
-        _queue = in_queue
+        _queueSize = in_queueSize
     }
     
     //initializer using firebase data
     init(in_courtNum: Int, fbData: Dictionary<String, AnyObject>) {
         _courtNum = in_courtNum
         _queueOpen = fbData["open"] as! Bool
-        _queue = fbData["queue"] as? [Player] ?? [Player]()
+        _queueSize = fbData["queueSize"] as? Int ?? 0
     }
 }

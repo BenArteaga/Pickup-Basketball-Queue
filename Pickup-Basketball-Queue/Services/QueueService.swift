@@ -90,11 +90,10 @@ class QueueService {
                     }
                     self.queue = newQueue
                 }
+                //update the size of the queue in the database so that the view with the courts can accurately display queue sizes
+                self.updateQueueSize()
                 completion(true)
             })
-            
-            //update the size of the queue in the database
-            self.updateQueueSize()
         })
     }
     
@@ -115,8 +114,8 @@ class QueueService {
     }
     
     func updateQueueSize() {
-        let ref = Database.database().reference().child("courtInfo").child(gymID).child("\(courtNum)").child("queue")
-        let newSize = ["size": self.queue.count]
+        let ref = Database.database().reference().child("courtInfo").child(gymID).child("\(courtNum)")
+        let newSize = ["queueSize": self.queue.count]
         ref.updateChildValues(newSize)
     }
 }
