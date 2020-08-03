@@ -78,8 +78,23 @@ class QueueService {
             dispatchGroup.notify(queue: .main, execute: {
                 //sort the queue to ensure that it will appear in order
                 self.queue = self.queue.sorted(by: {$0.queuePosition! < $1.queuePosition!})
+                
+                //for some reason, this is getting called twice when removeCurrentUser is called so we need to remove repeats
+                var newQueue : [Player] = []
+                if self.queue.count > 1 {
+                    newQueue.append(self.queue[0])
+                    for i in 1..<(self.queue.count) {
+                        if(self.queue[i].playerID != self.queue[i - 1].playerID) {
+                            newQueue.append(self.queue[i])
+                        }
+                    }
+                    self.queue = newQueue
+                }
                 completion(true)
             })
+            
+            //update the size of the queue in the database
+            self.updateQueueSize()
         })
     }
     
@@ -97,5 +112,11 @@ class QueueService {
                 completion(true)
             }
         })
+    }
+    
+    func updateQueueSize() {
+        let ref = Database.database().reference().child("courtInfo").child(gymID).child("\(courtNum)").child("queue")
+        let newSize = ["size": self.queue.count]
+        ref.updateChildValues(newSize)
     }
 }
